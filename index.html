@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bari Family Trip — March 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf6f0;
+      --sand: #e8dcc8;
+      --terracotta: #c4622d;
+      --rust: #9e3f18;
+      --olive: #6b7c3e;
+      --sky: #4a7fa5;
+      --deep: #1e1a16;
+      --muted: #7a6f63;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--deep);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--deep);
+      color: var(--cream);
+      padding: 60px 40px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(196,98,45,0.25) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(74,127,165,0.15) 0%, transparent 50%);
+    }
+    .hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
+    .hero-tag {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 16px; font-weight: 500;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .hero h1 em { font-style: italic; color: var(--terracotta); }
+    .hero-meta {
+      display: flex; gap: 28px; flex-wrap: wrap;
+      font-size: 13px; color: #a89e92; margin-top: 20px;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+    .hero-meta span::before { content: '●'; color: var(--terracotta); font-size: 8px; }
+
+    /* ── NAV TABS ── */
+    .tabs {
+      background: var(--deep);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; gap: 0; overflow-x: auto;
+      max-width: 100%;
+    }
+    .tab-btn {
+      padding: 14px 22px;
+      background: none; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 500;
+      color: #7a6f63; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--cream); }
+    .tab-btn.active { color: var(--terracotta); border-bottom-color: var(--terracotta); }
+
+    /* ── MAIN ── */
+    .main { max-width: 900px; margin: 0 auto; padding: 40px 20px 80px; }
+
+    /* ── PANELS ── */
+    .panel { display: none; animation: fadeUp 0.35s ease; }
+    .panel.active { display: block; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION HEADING ── */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; margin-bottom: 6px;
+    }
+    .section-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+
+    /* ── DAY CARD ── */
+    .day-card {
+      background: var(--white);
+      border-radius: 14px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .day-header {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 22px; cursor: pointer;
+      user-select: none;
+      border-bottom: 1px solid transparent;
+      transition: background 0.2s;
+    }
+    .day-header:hover { background: #fdf9f5; }
+    .day-header.open { border-bottom-color: var(--sand); }
+    .day-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--terracotta); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.1rem;
+      font-weight: 700; flex-shrink: 0;
+    }
+    .day-info { flex: 1; }
+    .day-info h3 { font-size: 1rem; font-weight: 600; }
+    .day-info p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .day-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge {
+      font-size: 10px; padding: 3px 9px; border-radius: 20px;
+      font-weight: 500; letter-spacing: 0.3px;
+    }
+    .badge.safari { background: #fef3e2; color: #b45309; }
+    .badge.day-trip { background: #e0f0ff; color: #1d6fa4; }
+    .badge.city { background: #edf7ed; color: #2d6a2d; }
+    .badge.arrival { background: #f3eefe; color: #6b3ab5; }
+    .badge.checkout { background: #fce8e8; color: #b53a3a; }
+    .chevron { font-size: 18px; color: var(--muted); transition: transform 0.25s; }
+    .day-header.open .chevron { transform: rotate(180deg); }
+
+    .day-body { display: none; padding: 22px; }
+    .day-body.open { display: block; }
+
+    /* ── SCHEDULE TIMELINE ── */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+      width: 2px; background: var(--sand);
+    }
+    .tl-item {
+      display: flex; gap: 18px; margin-bottom: 18px;
+      position: relative;
+    }
+    .tl-dot {
+      width: 42px; height: 42px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0; position: relative; z-index: 1;
+      background: var(--cream); border: 2px solid var(--sand);
+    }
+    .tl-dot.snack { background: #fef9ec; border-color: #f5c842; }
+    .tl-dot.sight  { background: #eef6ff; border-color: #90bfdf; }
+    .tl-dot.lunch  { background: #fdf0e8; border-color: #e8956d; }
+    .tl-dot.nap    { background: #f0eff8; border-color: #b0a8d8; }
+    .tl-dot.dinner { background: #fdf0e8; border-color: #c4622d; }
+    .tl-dot.walk   { background: #edf7ed; border-color: #7aba7b; }
+    .tl-dot.special{ background: #fef3e2; border-color: #f5a623; }
+
+    .tl-content { flex: 1; padding-top: 8px; }
+    .tl-label {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--muted); font-weight: 500; margin-bottom: 3px;
+    }
+    .tl-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+    .tl-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .tl-tip {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: #fef9ec; border: 1px solid #f5e4a0;
+      padding: 4px 10px; border-radius: 20px;
+      font-size: 11px; color: #92710a; margin-top: 6px;
+    }
+
+    /* ── PLACES GRID ── */
+    .places-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px; margin-top: 8px;
+    }
+    .place-card {
+      background: var(--white); border-radius: 12px;
+      padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 3px solid var(--terracotta);
+    }
+    .place-card.snack  { border-color: #f5c842; }
+    .place-card.sight  { border-color: #4a7fa5; }
+    .place-card.eat    { border-color: var(--terracotta); }
+    .place-card.shop   { border-color: var(--olive); }
+
+    .place-type { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 5px; }
+    .place-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .place-stars { color: #f5a623; font-size: 12px; margin-bottom: 4px; }
+    .place-note { font-size: 12px; color: var(--muted); line-height: 1.4; }
+    .place-hours { font-size: 11px; color: var(--olive); margin-top: 6px; font-weight: 500; }
+    .place-warn { font-size: 11px; color: #b45309; margin-top: 4px; font-weight: 500; }
+
+    /* ── CHECKLIST PANEL ── */
+    .checklist-group { margin-bottom: 28px; }
+    .checklist-group h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; margin-bottom: 12px;
+      padding-bottom: 8px; border-bottom: 1px solid var(--sand);
+    }
+    .check-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid #f0ede8;
+      cursor: pointer;
+    }
+    .check-item:last-child { border-bottom: none; }
+    .check-box {
+      width: 20px; height: 20px; border-radius: 5px;
+      border: 2px solid var(--sand); flex-shrink: 0; margin-top: 1px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; background: var(--white);
+    }
+    .check-item.checked .check-box {
+      background: var(--terracotta); border-color: var(--terracotta);
+      color: white; font-size: 12px;
+    }
+    .check-item.checked .check-text { text-decoration: line-through; color: var(--muted); }
+    .check-text { font-size: 14px; line-height: 1.4; }
+    .check-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── INFO PANEL ── */
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px; margin-bottom: 28px;
+    }
+    .info-card {
+      background: var(--white); border-radius: 12px;
+      padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .info-card h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 10px; }
+    .info-card p { font-size: 14px; line-height: 1.6; }
+    .info-card strong { color: var(--terracotta); }
+    .info-card a { color: var(--sky); text-decoration: none; }
+    .info-card a:hover { text-decoration: underline; }
+
+    .tip-box {
+      background: #fef9ec; border: 1px solid #f5e4a0;
+      border-radius: 12px; padding: 16px 20px; margin-bottom: 16px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .tip-icon { font-size: 22px; flex-shrink: 0; }
+    .tip-content h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .tip-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── FOOD CARDS ── */
+    .food-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px; margin-top: 8px;
+    }
+    .food-card {
+      background: var(--white); border-radius: 12px;
+      padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 3px solid var(--olive);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .food-emoji { font-size: 26px; }
+    .food-name { font-weight: 600; font-size: 0.95rem; }
+    .food-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .food-where { font-size: 11px; color: var(--olive); font-weight: 500; margin-top: 2px; }
+
+    /* ── BUDGET GRID ── */
+    .budget-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px; margin-top: 8px; margin-bottom: 24px;
+    }
+    .budget-card {
+      background: var(--white); border-radius: 12px;
+      padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .budget-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 4px; }
+    .budget-amount { font-size: 1.2rem; font-weight: 700; color: var(--terracotta); }
+    .budget-note { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 20px 36px; }
+      .tab-btn { padding: 12px 14px; font-size: 12px; }
+      .day-badges { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Family Travel Planner</div>
+    <h1>Bari &amp; <em>Puglia</em><br>Spring 2026</h1>
+    <div class="hero-meta">
+      <span>28 Mar – 1 Apr 2026</span>
+      <span>Il Leon D'Oro Hotel</span>
+      <span>2 Adults · 1 Toddler (3 yrs)</span>
+      <span>Car: Sicily by Car</span>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showPanel('itinerary', this)">📅 Itinerary</button>
+  <button class="tab-btn" onclick="showPanel('places', this)">📍 Places</button>
+  <button class="tab-btn" onclick="showPanel('checklist', this)">✅ Checklist</button>
+  <button class="tab-btn" onclick="showPanel('info', this)">ℹ️ Trip Info</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ══ ITINERARY PANEL ══ -->
+  <div id="panel-itinerary" class="panel active">
+    <div class="section-title">Day-by-Day Plan</div>
+    <div class="section-sub">Tap any day to expand the full schedule</div>
+
+    <!-- DAY 1 -->
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">1</div>
+        <div class="day-info">
+          <h3>Saturday, March 28 — Arrival Day</h3>
+          <p>Settle in, first gelato, evening seafront stroll</p>
+        </div>
+        <div class="day-badges"><span class="badge arrival">Arrival</span></div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot special">🛬</div>
+            <div class="tl-content">
+              <div class="tl-label">Arrival</div>
+              <div class="tl-title">Pick up rental car · Drive to hotel</div>
+              <div class="tl-desc">Sicily by Car counter at Bari Karol Wojtyla Airport. Confirmation #724958191. Full Protection Insurance confirmed.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot snack">☕</div>
+            <div class="tl-content">
+              <div class="tl-label">Morning / Afternoon Snack</div>
+              <div class="tl-title">Jérôme Cafè</div>
+              <div class="tl-desc">Open daily 7AM–9PM. Just steps from the hotel area. Great pastries, cappuccino, hot chocolate.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot special">🏨</div>
+            <div class="tl-content">
+              <div class="tl-label">Check-In</div>
+              <div class="tl-title">Il Leon D'Oro Bari — after 3:00 PM</div>
+              <div class="tl-desc">Booking #6488414815. Luggage storage available before check-in. Room guaranteed after 3PM.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot sight">🌊</div>
+            <div class="tl-content">
+              <div class="tl-label">Evening Sightseeing</div>
+              <div class="tl-title">Lungomare Araldo di Crollalanza</div>
+              <div class="tl-desc">Beautiful seafront promenade. Flat, stroller-friendly, sea breeze, perfect first evening view of Bari.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dinner">🍝</div>
+            <div class="tl-content">
+              <div class="tl-label">Dinner</div>
+              <div class="tl-title">Antò Ristorante — Cucina Tipica Pugliese</div>
+              <div class="tl-desc">Authentic Puglian cuisine in the Old Town. Great orecchiette, ragu, fresh pasta. Open Sat from 11:45AM. Large portions, family-friendly.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot walk">🛍️</div>
+            <div class="tl-content">
+              <div class="tl-label">Evening Walk</div>
+              <div class="tl-title">Via Sparano da Bari</div>
+              <div class="tl-desc">Bari's main shopping street. Grab water and snacks for tomorrow at a nearby supermarket. ZARA and other shops open until 8PM.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">2</div>
+        <div class="day-info">
+          <h3>Sunday, March 29 — Zoosafari Fasanolandia!</h3>
+          <p>Drive-through safari + amusement park (~1hr from Bari)</p>
+        </div>
+        <div class="day-badges"><span class="badge safari">🦁 Safari Day</span></div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="tl-item" style="margin-bottom:14px">
+          <div class="tl-dot snack">☕</div>
+          <div class="tl-content">
+            <div class="tl-label">Morning Snack — 7:30 AM</div>
+            <div class="tl-title">Melo Coffee and Bakery</div>
+            <div class="tl-desc">Open Sun 7:30AM–2:30PM. Grab focaccia and pastries to go for the road!</div>
+          </div>
+        </div>
+        <div class="tl-item" style="margin-bottom:14px">
+          <div class="tl-dot special">🚗</div>
+          <div class="tl-content">
+            <div class="tl-label">Drive — ~1 hour</div>
+            <div class="tl-title">Bari → Zoosafari Fasanolandia, Fasano</div>
+            <div class="tl-desc">Leave by 9AM to arrive at opening time. Via dello Zoosafari, 72015 Fasano. Park opens 10AM on Sundays (closes 2PM — arrive early!).</div>
+            <div class="tl-tip">🥕 Tip: Bring a bag of carrots to feed the animals during the drive-through!</div>
+          </div>
+        </div>
+        <div class="tl-item" style="margin-bottom:14px">
+          <div class="tl-dot special">🦒</div>
+          <div class="tl-content">
+            <div class="tl-label">Full Day — 10 AM</div>
+            <div class="tl-title">Zoosafari Fasanolandia — Drive-through safari first!</div>
+            <div class="tl-desc">Start with the car safari — animals come right up to the car (giraffes, camels, zebras!). Then explore the park on foot: lemur walk-through (+€3), rides, shows. Amazing for a 3-year-old.</div>
+          </div>
+        </div>
+        <div class="tl-item" style="margin-bottom:14px">
+          <div class="tl-dot lunch">🍕</div>
+          <div class="tl-content">
+            <div class="tl-label">Lunch</div>
+            <div class="tl-title">Inside the park</div>
+            <div class="tl-desc">Food options available inside Zoosafari. Or pack your own snacks to save time.</div>
+          </div>
+        </div>
+        <div class="tl-item" style="margin-bottom:14px">
+          <div class="tl-dot nap">😴</div>
+          <div class="tl-content">
+            <div class="tl-label">Nap Time — Drive Back</div>
+            <div class="tl-title">Drive back to Bari (~1hr)</div>
+            <div class="tl-desc">Your little one will likely fall asleep in the car 😄. Perfect nap on the road!</div>
+          </div>
+        </div>
+        <div class="tl-item" style="margin-bottom:14px">
+          <div class="tl-dot snack">🧁</div>
+          <div class="tl-content">
+            <div class="tl-label">Afternoon Snack</div>
+            <div class="tl-title">Il Caffettaio</div>
+            <div class="tl-desc">⭐ 4.9 stars — best pastries in Bari! Note: Closed Sundays. Use Jérôme Cafè (open 7 days) as backup.</div>
+          </div>
+        </div>
+        <div class="tl-item" style="margin-bottom:14px">
+          <div class="tl-dot dinner">🍷</div>
+          <div class="tl-content">
+            <div class="tl-label">Dinner</div>
+            <div class="tl-title">Le Nicchie — Old Town Bari</div>
+            <div class="tl-desc">⭐ 4.7 — cozy restaurant in a picturesque Old Town alley. Try the spaghetti all'assassina! Open Sun 11:30AM–3:30PM &amp; 7:30–11PM.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot walk">🛒</div>
+          <div class="tl-content">
+            <div class="tl-label">Evening Walk</div>
+            <div class="tl-title">Old Town stroll + mini-market</div>
+            <div class="tl-desc">Stock up on water, snacks, and anything you need for tomorrow.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">3</div>
+        <div class="day-info">
+          <h3>Monday, March 30 — Bari Old Town</h3>
+          <p>San Nicola, orecchiette ladies, seaside, local cuisine</p>
+        </div>
+        <div class="day-badges"><span class="badge city">🏛️ City Day</span></div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot snack">☕</div>
+            <div class="tl-content">
+              <div class="tl-label">Morning Snack</div>
+              <div class="tl-title">Melo Coffee and Bakery</div>
+              <div class="tl-desc">Open Mon–Sat 7AM–9PM. Best focaccia in town. Sit and enjoy before heading out.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot sight">⛪</div>
+            <div class="tl-content">
+              <div class="tl-label">Morning Sightseeing</div>
+              <div class="tl-title">Basilica di San Nicola ⭐ 4.8</div>
+              <div class="tl-desc">One of southern Italy's most beautiful medieval basilicas. Free entry. Peaceful inside — great for little ones. Then walk to the Cathedral of Saint Sabinus (crypt + archaeology €9 combined ticket).</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot lunch">🍽️</div>
+            <div class="tl-content">
+              <div class="tl-label">Lunch</div>
+              <div class="tl-title">Mastro Ciccio</div>
+              <div class="tl-desc">⭐ 4.5 — local legend for focaccia barese and panzerotti. Relaxed, fast, family-friendly. Open from 10AM. Great value.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot nap">😴</div>
+            <div class="tl-content">
+              <div class="tl-label">Nap Time</div>
+              <div class="tl-title">Stroller walk along Lungomare or back to hotel</div>
+              <div class="tl-desc">The flat seafront promenade is perfect for a stroller nap with sea views for you both.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot snack">🧁</div>
+            <div class="tl-content">
+              <div class="tl-label">Afternoon Snack</div>
+              <div class="tl-title">Il Caffettaio ⭐ 4.9</div>
+              <div class="tl-desc">The best café in Bari. Open Mon–Fri 7AM–5PM, Sat until 1PM. Amazing macchiato and pastries.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot sight">👵</div>
+            <div class="tl-content">
+              <div class="tl-label">Afternoon Sightseeing</div>
+              <div class="tl-title">Largo Albicocca — Piazza degli Innamorati</div>
+              <div class="tl-desc">Watch local women make fresh orecchiette pasta by hand in the alleyways! The whole family will love it. Try a fresh tarallo. Very photogenic.</div>
+              <div class="tl-tip">📸 The ladies are happy to be photographed and let kids watch!</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dinner">🦞</div>
+            <div class="tl-content">
+              <div class="tl-label">Dinner</div>
+              <div class="tl-title">La Cantina dello Zio ⭐ 4.7</div>
+              <div class="tl-desc">Warm family atmosphere, complimentary bruschetta and limoncello. Excellent orecchiette and pizza. Open Wed &amp; Thu only — book ahead!</div>
+              <div class="tl-tip">📞 Call: +39 329 229 9403</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot walk">🛍️</div>
+            <div class="tl-content">
+              <div class="tl-label">Evening Walk</div>
+              <div class="tl-title">Corso Vittorio Emanuele — souvenirs &amp; gelato</div>
+              <div class="tl-desc">Stroll the main corso for ceramic souvenirs, local taralli, limoncello, and a bedtime gelato for the little one.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">4</div>
+        <div class="day-info">
+          <h3>Tuesday, March 31 — Polignano a Mare</h3>
+          <p>Cliff coves, Old Town, blue Adriatic (~30min drive)</p>
+        </div>
+        <div class="day-badges"><span class="badge day-trip">🌊 Day Trip</span></div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot snack">☕</div>
+            <div class="tl-content">
+              <div class="tl-label">Morning Snack</div>
+              <div class="tl-title">Melo Coffee and Bakery</div>
+              <div class="tl-desc">Fuel up before the drive. Grab pastries and focaccia to go if you want to save time.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot special">🚗</div>
+            <div class="tl-content">
+              <div class="tl-label">Drive — ~30 minutes</div>
+              <div class="tl-title">Bari → Polignano a Mare</div>
+              <div class="tl-desc">Take the SS16 coastal road south. Easy parking near the old town. Arrive by 10AM to beat any crowds.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot sight">🏖️</div>
+            <div class="tl-content">
+              <div class="tl-label">Morning Sightseeing</div>
+              <div class="tl-title">Lama Monachile — Iconic Cliff Cove ⭐ 4.7</div>
+              <div class="tl-desc">The breathtaking cliff beach you've seen in every photo of Puglia. Rocky, so bring beach shoes. Crystal clear water. The old town above is very stroller-friendly.</div>
+              <div class="tl-tip">🪸 Walk the upper town streets for the best views — no stairs needed for the stroller!</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot lunch">🦑</div>
+            <div class="tl-content">
+              <div class="tl-label">Lunch</div>
+              <div class="tl-title">Polignano Old Town restaurant</div>
+              <div class="tl-desc">Many great seafood restaurants in Polignano's old town perched over the sea. Ask locals for the best option of the day.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot nap">😴</div>
+            <div class="tl-content">
+              <div class="tl-label">Nap Time</div>
+              <div class="tl-title">Drive back to Bari or stroller walk in shade</div>
+              <div class="tl-desc">The 30-min drive back is perfect for a car nap. Or find a shaded piazza in Polignano for stroller rest.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot snack">🧁</div>
+            <div class="tl-content">
+              <div class="tl-label">Afternoon Snack</div>
+              <div class="tl-title">Jérôme Cafè — back in Bari</div>
+              <div class="tl-desc">Open daily 7AM–9PM. Good cakes, cappuccino, and a seat to rest after the day out.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot sight">🏛️</div>
+            <div class="tl-content">
+              <div class="tl-label">Afternoon Sightseeing</div>
+              <div class="tl-title">Old Town wandering + Arco delle Meraviglie</div>
+              <div class="tl-desc">Explore any corners of Bari Vecchia you haven't seen yet. The medieval alleyways are atmospheric at any time of day.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dinner">🍷</div>
+            <div class="tl-content">
+              <div class="tl-label">Dinner</div>
+              <div class="tl-title">Antò Ristorante or Le Nicchie</div>
+              <div class="tl-desc">Antò open Tues ✅ | Le Nicchie open Tues ✅. Both excellent choices. Book ahead in the afternoon!</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot walk">🛍️</div>
+            <div class="tl-content">
+              <div class="tl-label">Evening Walk</div>
+              <div class="tl-title">Last shopping — Via Sparano / ZARA / Supermarket</div>
+              <div class="tl-desc">Pick up any last souvenirs, gifts, or travel snacks for tomorrow's journey home.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">5</div>
+        <div class="day-info">
+          <h3>Wednesday, April 1 — Checkout &amp; Departure</h3>
+          <p>Optional: Alberobello fairy-tale trulli before heading home</p>
+        </div>
+        <div class="day-badges"><span class="badge checkout">🧳 Checkout</span></div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot snack">☕</div>
+            <div class="tl-content">
+              <div class="tl-label">Final Morning Snack</div>
+              <div class="tl-title">Melo Coffee &amp; Bakery — one last time!</div>
+              <div class="tl-desc">Savour that final Italian cappuccino and pastry. Open from 7AM.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot special">🏨</div>
+            <div class="tl-content">
+              <div class="tl-label">Check-Out by 11AM</div>
+              <div class="tl-title">Il Leon D'Oro — store luggage if needed</div>
+              <div class="tl-desc">Ask reception to store bags while you explore a bit more.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot sight">🏠</div>
+            <div class="tl-content">
+              <div class="tl-label">Optional Half-Day Trip</div>
+              <div class="tl-title">Alberobello — Trulli fairy-tale village (~1hr)</div>
+              <div class="tl-desc">UNESCO-listed village with iconic white stone cone-roofed houses (trulli). Your toddler will think it's a fairy tale! Go early morning to avoid crowds. Trulli Rione Monti ⭐ 4.8.</div>
+              <div class="tl-tip">🏡 Go on a weekday morning — much less crowded than weekends!</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot lunch">🍽️</div>
+            <div class="tl-content">
+              <div class="tl-label">Lunch</div>
+              <div class="tl-title">In Alberobello or back in Bari</div>
+              <div class="tl-desc">Many charming cafès and restaurants in Alberobello's town center. Or head back to Bari for a final meal.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot special">✈️</div>
+            <div class="tl-content">
+              <div class="tl-label">Departure</div>
+              <div class="tl-title">Return car · Fly home</div>
+              <div class="tl-desc">Return rental at Bari Karol Wojtyla Airport. Confirmation #724958191. Allow extra time if coming from Alberobello.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PLACES PANEL ══ -->
+  <div id="panel-places" class="panel">
+    <div class="section-title">All Places</div>
+    <div class="section-sub">Every spot in your trip, organized by category</div>
+
+    <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:14px;">☕ Snacks &amp; Cafés</h3>
+    <div class="places-grid">
+      <div class="place-card snack">
+        <div class="place-type">Café · Bakery</div>
+        <div class="place-name">Melo Coffee and Bakery</div>
+        <div class="place-stars">⭐ 4.5 (632 reviews)</div>
+        <div class="place-note">Best all-rounder for snacks. Focaccia, pastries, lasagna, panzerotti. Indoor + outdoor seating.</div>
+        <div class="place-hours">🕐 Mon–Sat 7AM–9PM · Sun 7:30AM–2:30PM</div>
+      </div>
+      <div class="place-card snack">
+        <div class="place-type">Café · Pastry</div>
+        <div class="place-name">Il Caffettaio ⭐ Best in Bari</div>
+        <div class="place-stars">⭐ 4.9 (775 reviews)</div>
+        <div class="place-note">Hands-down best macchiato and pastries in Bari. Very fast, professional service.</div>
+        <div class="place-hours">🕐 Mon–Fri 7AM–5PM · Sat 7AM–1PM</div>
+        <div class="place-warn">⚠️ Closed Sundays</div>
+      </div>
+      <div class="place-card snack">
+        <div class="place-type">Café</div>
+        <div class="place-name">Jérôme Cafè</div>
+        <div class="place-stars">⭐ 4.1 (1,621 reviews)</div>
+        <div class="place-note">Open 7 days. Great cakes, red velvet, cappuccino. Good backup for Sunday snacks.</div>
+        <div class="place-hours">🕐 Every day 7AM–9PM</div>
+      </div>
+      <div class="place-card snack">
+        <div class="place-type">Specialty Coffee</div>
+        <div class="place-name">Veronero Artisan Coffee</div>
+        <div class="place-stars">⭐ 4.6 (690 reviews)</div>
+        <div class="place-note">Best flat white and cardamom buns in Bari. Modern, spacious interior.</div>
+        <div class="place-hours">🕐 Tue–Fri 9AM–4PM · Sat–Sun 10AM–5PM</div>
+        <div class="place-warn">⚠️ Closed Mondays</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin:28px 0 14px;">🍽️ Restaurants</h3>
+    <div class="places-grid">
+      <div class="place-card eat">
+        <div class="place-type">Italian · Puglian</div>
+        <div class="place-name">La Cantina dello Zio</div>
+        <div class="place-stars">⭐ 4.7 (14,630 reviews)</div>
+        <div class="place-note">Warm family atmosphere, complimentary bruschetta &amp; limoncello. Best orecchiette in town.</div>
+        <div class="place-hours">🕐 Wed &amp; Thu: 11:30AM–11PM only</div>
+        <div class="place-warn">⚠️ Only open 2 days/week! Book ahead: +39 329 229 9403</div>
+      </div>
+      <div class="place-card eat">
+        <div class="place-type">Italian · Puglian</div>
+        <div class="place-name">Le Nicchie</div>
+        <div class="place-stars">⭐ 4.7 (2,961 reviews)</div>
+        <div class="place-note">Picturesque Old Town alley, excellent seafood pasta. Try spaghetti all'assassina!</div>
+        <div class="place-hours">🕐 Tue–Sun 11:30AM–3:30PM &amp; 7:30–11PM</div>
+        <div class="place-warn">⚠️ Closed Mondays</div>
+      </div>
+      <div class="place-card eat">
+        <div class="place-type">Italian · Puglian</div>
+        <div class="place-name">Antò Ristorante</div>
+        <div class="place-stars">⭐ 4.6 (11,245 reviews)</div>
+        <div class="place-note">Authentic local cuisine, large portions, live music. Great ragu and truffle pasta.</div>
+        <div class="place-hours">🕐 Mon–Tue, Thu–Sun from 11:45AM</div>
+        <div class="place-warn">⚠️ Closed Wednesdays</div>
+      </div>
+      <div class="place-card eat">
+        <div class="place-type">Local · Fast Casual</div>
+        <div class="place-name">Mastro Ciccio</div>
+        <div class="place-stars">⭐ 4.5 (12,065 reviews)</div>
+        <div class="place-note">Perfect lunch spot. Famous for focaccia barese and panzerotti. Family-friendly, affordable.</div>
+        <div class="place-hours">🕐 Every day from 10AM</div>
+      </div>
+      <div class="place-card eat">
+        <div class="place-type">Fine Dining · Seafood</div>
+        <div class="place-name">Bahari in Centro</div>
+        <div class="place-stars">⭐ 5.0 (63 reviews)</div>
+        <div class="place-note">Molecular seafood experience. Octopus risotto with caviar. Special occasion dinner.</div>
+        <div class="place-hours">🕐 Tue–Sun from 12PM</div>
+        <div class="place-warn">⚠️ Closed Mondays</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin:28px 0 14px;">🏛️ Sightseeing</h3>
+    <div class="places-grid">
+      <div class="place-card sight">
+        <div class="place-type">Church · Historic · Bari</div>
+        <div class="place-name">Basilica di San Nicola</div>
+        <div class="place-stars">⭐ 4.8 (22,082 reviews)</div>
+        <div class="place-note">Bari's most iconic landmark. Resting place of St. Nicholas. Free entry. Beautiful crypt.</div>
+        <div class="place-hours">🕐 Daily 6:30AM–8:30PM</div>
+      </div>
+      <div class="place-card sight">
+        <div class="place-type">Cathedral · Museum · Bari</div>
+        <div class="place-name">Cathedral of Saint Sabinus</div>
+        <div class="place-stars">⭐ 4.7 (6,026 reviews)</div>
+        <div class="place-note">€9 combined ticket for church + underground archaeology. Fascinating crypt with mosaic floors.</div>
+        <div class="place-hours">🕐 Daily 8:30AM–7PM</div>
+      </div>
+      <div class="place-card sight">
+        <div class="place-type">Promenade · Bari</div>
+        <div class="place-name">Lungomare Araldo di Crollalanza</div>
+        <div class="place-stars">⭐ 4.6 (6,882 reviews)</div>
+        <div class="place-note">Best seafront walk in Bari. Flat and stroller-friendly. Perfect for evenings &amp; sunrise.</div>
+        <div class="place-hours">🕐 Sat–Sun from 11AM · Weekdays from 4PM</div>
+      </div>
+      <div class="place-card sight">
+        <div class="place-type">Piazza · Cultural · Bari</div>
+        <div class="place-name">Largo Albicocca (Orecchiette Alley)</div>
+        <div class="place-stars">⭐ 4.5 (802 reviews)</div>
+        <div class="place-note">Watch local nonnas make fresh orecchiette by hand in the alleyways. Kids love it!</div>
+        <div class="place-hours">🕐 Open 24 hours (best during morning/midday)</div>
+      </div>
+      <div class="place-card sight">
+        <div class="place-type">Beach · Cliffs · Polignano a Mare</div>
+        <div class="place-name">Lama Monachile</div>
+        <div class="place-stars">⭐ 4.7 (20,496 reviews)</div>
+        <div class="place-note">Puglia's most iconic cliff cove. Crystal water, caves, breathtaking views. 30min from Bari.</div>
+        <div class="place-hours">🕐 Always open</div>
+      </div>
+      <div class="place-card sight">
+        <div class="place-type">Zoo · Safari · Fasano</div>
+        <div class="place-name">Zoosafari Fasanolandia</div>
+        <div class="place-stars">⭐ 4.5 (29,820 reviews)</div>
+        <div class="place-note">Drive-through safari + amusement park. Animals come to your car! Perfect for a 3-year-old. Bring carrots!</div>
+        <div class="place-hours">🕐 Mon–Fri 10AM–1PM · Sat–Sun 10AM–2PM</div>
+        <div class="place-warn">⚠️ Short hours — arrive at opening!</div>
+      </div>
+      <div class="place-card sight">
+        <div class="place-type">UNESCO Village · Alberobello</div>
+        <div class="place-name">Trulli Rione Monti</div>
+        <div class="place-stars">⭐ 4.8 (1,856 reviews)</div>
+        <div class="place-note">Fairy-tale cone-roofed stone houses. Your toddler will be amazed! Go early morning.</div>
+        <div class="place-hours">🕐 Always open (best 8–10AM)</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin:28px 0 14px;">🍕 Must-Try Foods</h3>
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-emoji">🫓</div>
+        <div class="food-name">Focaccia Barese</div>
+        <div class="food-desc">Soft, thick flatbread drenched in olive oil, topped with ripe tomatoes and olives. Puglia's everyday bread.</div>
+        <div class="food-where">📍 Best at: Mastro Ciccio · Melo Coffee</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🍝</div>
+        <div class="food-name">Orecchiette con Cime di Rapa</div>
+        <div class="food-desc">The signature pasta of Puglia — ear-shaped pasta tossed with bitter turnip tops, anchovy, and chilli.</div>
+        <div class="food-where">📍 Best at: La Cantina dello Zio · Antò</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🥟</div>
+        <div class="food-name">Panzerotto</div>
+        <div class="food-desc">A fried (or baked) pocket of dough stuffed with gooey mozzarella and tomato. Bari's street food king.</div>
+        <div class="food-where">📍 Best at: Mastro Ciccio</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🌀</div>
+        <div class="food-name">Taralli</div>
+        <div class="food-desc">Crunchy ring-shaped crackers flavoured with fennel seeds and white wine. Perfect snack to bring home too.</div>
+        <div class="food-where">📍 Found in any bakery or food shop</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🧀</div>
+        <div class="food-name">Burrata di Andria</div>
+        <div class="food-desc">Puglia's world-famous fresh cheese — a mozzarella shell filled with creamy stracciatella. Nothing like it elsewhere.</div>
+        <div class="food-where">📍 Found at most restaurants</div>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🍝</div>
+        <div class="food-name">Spaghetti all'Assassina</div>
+        <div class="food-desc">Bari's fiery invention — spaghetti pan-fried at high heat with tomato and chilli until slightly charred and crispy.</div>
+        <div class="food-where">📍 Best at: Le Nicchie</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CHECKLIST PANEL ══ -->
+  <div id="panel-checklist" class="panel">
+    <div class="section-title">Trip Checklist</div>
+    <div class="section-sub">Tap items to check them off</div>
+
+    <div class="checklist-group">
+      <h3>📋 Before You Go</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Book La Cantina dello Zio for Monday March 30</div><div class="check-sub">Only open Wed &amp; Thu — Mon 30 is a Monday, use for Wed March 30 · +39 329 229 9403</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Confirm Zoosafari hours for Sunday March 29</div><div class="check-sub">Opens 10AM, closes 2PM on weekends — arrive right at opening</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Check Zoosafari ticket prices &amp; buy online</div><div class="check-sub">zoosafari.it — family ticket ~€140. Saves time at entry</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Download offline maps for Bari, Fasano, Polignano, Alberobello</div><div class="check-sub">Google Maps or Maps.me — useful if no data roaming</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Pack stroller + rain cover</div><div class="check-sub">End of March can be mild but occasionally rainy in Puglia</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Pack beach shoes / sandals for Polignano</div><div class="check-sub">Lama Monachile is rocky — good shoes essential</div></div>
+      </div>
+    </div>
+
+    <div class="checklist-group">
+      <h3>🦁 Day 2 — Zoosafari</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Buy a bag of carrots the day before</div><div class="check-sub">Animals during the drive-through love them — giraffe feeding!</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Leave Bari by 9AM on Sunday</div><div class="check-sub">~1hr drive to Fasano. Park opens 10AM, closes 2PM on Sundays</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Pack picnic snacks / lunch for the park</div><div class="check-sub">Food inside can be pricey. Or eat at park restaurant.</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Budget €3 extra for the lemur walk-through</div><div class="check-sub">Inside the park — highly recommended, especially for a toddler!</div></div>
+      </div>
+    </div>
+
+    <div class="checklist-group">
+      <h3>🍝 Food Must-Tries in Puglia</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Focaccia barese — fluffy olive oil flatbread with tomatoes</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Orecchiette con le cime di rapa — the iconic Puglian pasta</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Panzerotto — fried or baked dough stuffed with mozzarella &amp; tomato</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Taralli — crunchy ring-shaped snack with fennel seeds</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Burrata di Andria — the creamiest burrata you'll ever taste</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Tiramisu at La Cantina dello Zio or Antò</div></div>
+      </div>
+    </div>
+
+    <div class="checklist-group">
+      <h3>🎁 Souvenir Ideas</h3>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Handmade ceramic from Bari Old Town</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Fresh taralli or orecchiette pasta to bring home</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Local olive oil or limoncello</div></div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div><div class="check-text">Small trullo figurine from Alberobello (for the little one!)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ INFO PANEL ══ -->
+  <div id="panel-info" class="panel">
+    <div class="section-title">Trip Info &amp; Tips</div>
+    <div class="section-sub">Key bookings, contacts, and family travel tips</div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>🏨 Hotel</h4>
+        <p><strong>Il Leon D'Oro Bari</strong><br>by Farace Hotels<br><br>
+        Booking #: <strong>6488414815</strong><br>
+        Check-in: <strong>Sat 28 Mar 2026</strong> (after 3PM)<br>
+        Check-out: <strong>Wed 1 Apr 2026</strong><br>
+        Phone: <a href="tel:+393923614972">+39 392 361 4972</a></p>
+      </div>
+      <div class="info-card">
+        <h4>🚗 Car Rental</h4>
+        <p><strong>Sicily by Car</strong><br>
+        Bari Karol Wojtyla Airport<br><br>
+        Confirmation: <strong>#724958191</strong><br>
+        Insurance: <strong>Full Protection ✅</strong><br><br>
+        Return car before departing Apr 1</p>
+      </div>
+      <div class="info-card">
+        <h4>📍 Distances from Bari</h4>
+        <p>
+        🦁 Zoosafari Fasano: <strong>~1hr drive</strong><br>
+        🌊 Polignano a Mare: <strong>~30min drive</strong><br>
+        🏠 Alberobello: <strong>~1hr drive</strong><br>
+        🏖️ Ostuni: <strong>~1.5hr drive</strong><br><br>
+        All easily done as day trips with car!
+        </p>
+      </div>
+      <div class="info-card">
+        <h4>🌤️ Weather in Late March</h4>
+        <p>
+        Avg temp: <strong>12–18°C</strong><br>
+        Some rain possible — pack a light jacket.<br>
+        Sea: too cold for swimming but beautiful.<br><br>
+        March is shoulder season — fewer crowds, better prices!
+        </p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">🍼</div>
+      <div class="tip-content">
+        <h4>Travelling with a 3-year-old in Bari</h4>
+        <p>Bari's Old Town (Bari Vecchia) has some cobblestones but is generally stroller-manageable on the main alleys. The Lungomare seafront is completely flat and perfect. Italian restaurants are very child-friendly — don't hesitate to ask for plain pasta or half-portions. Nap time in the car works perfectly with the day trip schedule.</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">🚗</div>
+      <div class="tip-content">
+        <h4>Parking in Bari</h4>
+        <p>Parking in the centro storico can be tricky and expensive. Leave the car at or near the hotel for Old Town days and walk. For day trips (Fasano, Polignano, Alberobello) the car is ideal. Most attractions have free or cheap parking lots.</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">🍽️</div>
+      <div class="tip-content">
+        <h4>Italian Dining Times</h4>
+        <p>Lunch is typically 12:30–2:30PM and dinner starts around 7:30–8PM. Restaurants often close between meals. For a toddler, arriving at 12:00 or 7:30 (when they open) means shorter waits and less noise. Always book dinner at La Cantina dello Zio ahead of time!</p>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:1.2rem;margin-top:8px;margin-bottom:6px;">💶 Budget Estimates</div>
+    <div class="section-sub">Approximate costs to help you plan</div>
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-label">Lunch (per person)</div>
+        <div class="budget-amount">€12–25</div>
+        <div class="budget-note">Mastro Ciccio ~€12–15 · Sit-down €20–25</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-label">Dinner (per person)</div>
+        <div class="budget-amount">€25–45</div>
+        <div class="budget-note">Most restaurants in Old Town</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-label">Zoosafari Family Ticket</div>
+        <div class="budget-amount">~€140</div>
+        <div class="budget-note">Buy online at zoosafari.it</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-label">Lemur Walk (Zoosafari)</div>
+        <div class="budget-amount">+€3</div>
+        <div class="budget-note">Add-on inside the park</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-label">Cathedral of St. Sabinus</div>
+        <div class="budget-amount">€9</div>
+        <div class="budget-note">Combined church + crypt ticket</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-label">Polignano Boat Tour</div>
+        <div class="budget-amount">~€15–20</div>
+        <div class="budget-note">Per adult · optional add-on</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-label">Alberobello</div>
+        <div class="budget-amount">Free</div>
+        <div class="budget-note">Walk around the trulli village</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-label">Basilica di San Nicola</div>
+        <div class="budget-amount">Free</div>
+        <div class="budget-note">Free entry, donations welcome</div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-icon">💡</div>
+      <div class="tip-content">
+        <h4>Cash is king in Puglia</h4>
+        <p>Smaller restaurants, bakeries, and market stalls may not accept cards. March is shoulder season — fewer crowds and better prices than summer peak.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+  function showPanel(name, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleDay(header) {
+    const body = header.nextElementSibling;
+    const isOpen = header.classList.contains('open');
+    // close all
+    document.querySelectorAll('.day-header.open').forEach(h => {
+      h.classList.remove('open');
+      h.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      header.classList.add('open');
+      body.classList.add('open');
+    }
+  }
+
+  function toggleCheck(item) {
+    item.classList.toggle('checked');
+    const box = item.querySelector('.check-box');
+    box.textContent = item.classList.contains('checked') ? '✓' : '';
+    // save to localStorage
+    saveChecklist();
+  }
+
+  function saveChecklist() {
+    const items = document.querySelectorAll('.check-item');
+    const state = Array.from(items).map(i => i.classList.contains('checked'));
+    try { localStorage.setItem('bari2026_checklist', JSON.stringify(state)); } catch(e) {}
+  }
+
+  function loadChecklist() {
+    try {
+      const state = JSON.parse(localStorage.getItem('bari2026_checklist') || '[]');
+      const items = document.querySelectorAll('.check-item');
+      items.forEach((item, i) => {
+        if (state[i]) {
+          item.classList.add('checked');
+          item.querySelector('.check-box').textContent = '✓';
+        }
+      });
+    } catch(e) {}
+  }
+
+  loadChecklist();
+  // open first day by default
+  document.querySelector('.day-header').click();
+</script>
+</body>
+</html>
