@@ -281,6 +281,99 @@
     .budget-amount { font-size: 1.2rem; font-weight: 700; color: var(--terracotta); }
     .budget-note { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
 
+    /* ── PHOTO SPOTS ── */
+    .photo-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px; margin-top: 8px;
+    }
+    .photo-card {
+      background: var(--white); border-radius: 12px;
+      padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 3px solid #f5a623;
+    }
+    .photo-day { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 4px; }
+    .photo-spot { font-weight: 600; font-size: 0.95rem; margin-bottom: 5px; }
+    .photo-tip { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+    /* ── DISTANCE HUB ── */
+    .distance-hub {
+      background: var(--white); border-radius: 14px;
+      padding: 24px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-bottom: 24px; text-align: center;
+    }
+    .hub-bari {
+      display: inline-block; background: var(--deep); color: var(--cream);
+      border-radius: 30px; padding: 8px 22px; font-weight: 600; font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .hub-routes { display: flex; flex-direction: column; gap: 12px; align-items: stretch; max-width: 420px; margin: 0 auto; }
+    .hub-row { display: flex; align-items: center; gap: 10px; }
+    .hub-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
+    .hub-line { flex: 1; height: 1px; background: var(--sand); position: relative; }
+    .hub-time {
+      position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+      font-size: 10px; color: var(--muted); background: var(--white); padding: 0 5px; white-space: nowrap;
+    }
+    .hub-dest {
+      background: var(--cream); border: 1px solid var(--sand);
+      border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 500;
+      min-width: 160px; text-align: left;
+    }
+    .hub-dest span { font-size: 11px; color: var(--muted); font-weight: 400; display: block; }
+
+    /* ── ZTL WARNING ── */
+    .ztl-box {
+      background: #fff3f3; border: 1px solid #f5b8b8;
+      border-radius: 12px; padding: 18px 20px; margin-bottom: 20px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .ztl-icon { font-size: 26px; flex-shrink: 0; }
+    .ztl-content h4 { font-size: 14px; font-weight: 700; color: #c0392b; margin-bottom: 6px; }
+    .ztl-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .ztl-content ul { font-size: 13px; color: var(--muted); line-height: 1.8; padding-left: 18px; margin-top: 6px; }
+
+    /* ── PHRASES ── */
+    .phrase-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 10px; margin-top: 8px; margin-bottom: 28px;
+    }
+    .phrase-card {
+      background: var(--white); border-radius: 10px;
+      padding: 12px 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .phrase-it { font-size: 0.9rem; font-weight: 600; color: var(--terracotta); }
+    .phrase-en { font-size: 12px; color: var(--deep); margin-top: 2px; }
+    .phrase-ctx { font-size: 11px; color: var(--muted); margin-top: 3px; font-style: italic; }
+
+    /* ── RAINY DAY ── */
+    .rain-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px; margin-top: 8px; margin-bottom: 28px;
+    }
+    .rain-card {
+      background: var(--white); border-radius: 12px;
+      padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-left: 3px solid var(--sky);
+    }
+    .rain-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+    .rain-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .rain-note { font-size: 11px; color: var(--olive); margin-top: 5px; font-weight: 500; }
+
+    /* ── EMERGENCY ── */
+    .emergency-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px; margin-top: 8px; margin-bottom: 28px;
+    }
+    .emergency-card {
+      background: var(--white); border-radius: 12px;
+      padding: 16px 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .emergency-num { font-size: 2rem; font-weight: 700; color: #c0392b; line-height: 1; }
+    .emergency-num.blue { color: var(--sky); }
+    .emergency-label { font-size: 12px; font-weight: 600; margin-top: 6px; }
+    .emergency-sub { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+
     /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: var(--cream); }
@@ -316,6 +409,7 @@
   <button class="tab-btn" onclick="showPanel('places', this)">📍 Places</button>
   <button class="tab-btn" onclick="showPanel('checklist', this)">✅ Checklist</button>
   <button class="tab-btn" onclick="showPanel('info', this)">ℹ️ Trip Info</button>
+  <button class="tab-btn" onclick="showPanel('tips', this)">🛟 Tips & Safety</button>
 </div>
 
 <!-- MAIN -->
@@ -878,6 +972,40 @@
         <div class="food-where">📍 Best at: Le Nicchie</div>
       </div>
     </div>
+
+    <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin:28px 0 14px;">📸 Best Photo Spots</h3>
+    <div class="photo-grid">
+      <div class="photo-card">
+        <div class="photo-day">Day 4 · Polignano a Mare</div>
+        <div class="photo-spot">🌊 Lama Monachile Cliff View</div>
+        <div class="photo-tip">Walk to the bridge above the cove for the iconic shot. Best light in the morning. One of the most photographed spots in all of Italy.</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-day">Day 3 · Bari Old Town</div>
+        <div class="photo-spot">👵 Orecchiette Alley (Largo Albicocca)</div>
+        <div class="photo-tip">The ladies making pasta by hand in the narrow alleyway. Candid shots welcome — they're used to it and love the attention!</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-day">Day 5 · Alberobello</div>
+        <div class="photo-spot">🏠 Trulli Rione Monti</div>
+        <div class="photo-tip">Go at 8–9 AM before tour groups arrive. The cone-rooftops with a toddler in frame make for magical photos. Misty mornings are stunning.</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-day">Day 1 & 4 · Bari</div>
+        <div class="photo-spot">🌅 Lungomare at Sunset</div>
+        <div class="photo-tip">Face west along the seafront promenade for a golden-hour shot over the Adriatic. Completely flat — easy with a stroller.</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-day">Day 3 · Bari Old Town</div>
+        <div class="photo-spot">⛪ Basilica di San Nicola Archway</div>
+        <div class="photo-tip">Frame the Basilica through the archway of the square for a dramatic shot. Late afternoon light hits the stone beautifully.</div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-day">Day 2 · Zoosafari</div>
+        <div class="photo-spot">🦒 Giraffe at Your Car Window</div>
+        <div class="photo-tip">Have the camera ready during the drive-through! A giraffe stretching into the car window with a toddler is an unforgettable shot.</div>
+      </div>
+    </div>
   </div>
 
   <!-- ══ CHECKLIST PANEL ══ -->
@@ -1095,6 +1223,184 @@
       <div class="tip-content">
         <h4>Cash is king in Puglia</h4>
         <p>Smaller restaurants, bakeries, and market stalls may not accept cards. March is shoulder season — fewer crowds and better prices than summer peak.</p>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:1.2rem;margin-top:8px;margin-bottom:6px;">🗺️ Getting Around</div>
+    <div class="section-sub">Bari is your base — all day trips are easy drives</div>
+    <div class="distance-hub">
+      <div class="hub-bari">📍 Bari — Your Base</div>
+      <div class="hub-routes">
+        <div class="hub-row">
+          <div class="hub-dot"></div>
+          <div class="hub-line"><span class="hub-time">~30 min · SS16 coastal</span></div>
+          <div class="hub-dest">🌊 Polignano a Mare <span>Day 4 · Lama Monachile</span></div>
+        </div>
+        <div class="hub-row">
+          <div class="hub-dot"></div>
+          <div class="hub-line"><span class="hub-time">~1 hour · SS16</span></div>
+          <div class="hub-dest">🦁 Zoosafari Fasano <span>Day 2 · Drive-through safari</span></div>
+        </div>
+        <div class="hub-row">
+          <div class="hub-dot"></div>
+          <div class="hub-line"><span class="hub-time">~1 hour</span></div>
+          <div class="hub-dest">🏠 Alberobello <span>Day 5 · UNESCO trulli village</span></div>
+        </div>
+        <div class="hub-row">
+          <div class="hub-dot"></div>
+          <div class="hub-line"><span class="hub-time">~1.5 hours</span></div>
+          <div class="hub-dest">🌿 Ostuni <span>Optional · The White City</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TIPS & SAFETY PANEL ══ -->
+  <div id="panel-tips" class="panel">
+    <div class="section-title">Tips &amp; Safety</div>
+    <div class="section-sub">Everything you need to stay safe, smart, and stress-free</div>
+
+    <!-- ZTL WARNING -->
+    <div class="ztl-box">
+      <div class="ztl-icon">🚫</div>
+      <div class="ztl-content">
+        <h4>ZTL Warning — Avoid Fines with Your Rental Car</h4>
+        <p>Bari's Old Town (Bari Vecchia) has a <strong>ZTL (Zona Traffico Limitato)</strong> — a restricted traffic zone monitored by cameras 24/7. Driving in by mistake with a rental car will result in an automatic fine sent weeks later.</p>
+        <ul>
+          <li>Leave the car at or near the hotel when exploring the Old Town</li>
+          <li>Park at <strong>Parcheggio Via Trevisani</strong> or the seafront car parks nearby</li>
+          <li>Look for <strong>white/blue parking lines</strong> — white = free, blue = paid</li>
+          <li>Use Google Maps and search "parcheggio Bari" for real-time spots</li>
+          <li>Day trips (Fasano, Polignano, Alberobello) — no ZTL issues, park freely</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EMERGENCY NUMBERS -->
+    <div class="section-title" style="font-size:1.2rem;margin-bottom:6px;">🏥 Emergency Numbers</div>
+    <div class="section-sub">Italy uses the EU-wide 112 for all emergencies</div>
+    <div class="emergency-grid">
+      <div class="emergency-card">
+        <div class="emergency-num">112</div>
+        <div class="emergency-label">General Emergency</div>
+        <div class="emergency-sub">Police, ambulance, fire — works from any phone</div>
+      </div>
+      <div class="emergency-card">
+        <div class="emergency-num">118</div>
+        <div class="emergency-label">Ambulance</div>
+        <div class="emergency-sub">Medical emergencies only</div>
+      </div>
+      <div class="emergency-card">
+        <div class="emergency-num">113</div>
+        <div class="emergency-label">Police</div>
+        <div class="emergency-sub">Polizia di Stato</div>
+      </div>
+      <div class="emergency-card">
+        <div class="emergency-num blue">🏥</div>
+        <div class="emergency-label">Nearest Hospital</div>
+        <div class="emergency-sub">Policlinico di Bari — Piazza Giulio Cesare</div>
+      </div>
+      <div class="emergency-card">
+        <div class="emergency-num blue">💊</div>
+        <div class="emergency-label">Pharmacy</div>
+        <div class="emergency-sub">Look for a green cross sign. Many open until 8 PM, some 24h</div>
+      </div>
+      <div class="emergency-card">
+        <div class="emergency-num blue">🇪🇺</div>
+        <div class="emergency-label">EHIC Card</div>
+        <div class="emergency-sub">Bring your European Health Insurance Card for free public care</div>
+      </div>
+    </div>
+
+    <!-- ITALIAN PHRASES -->
+    <div class="section-title" style="font-size:1.2rem;margin-bottom:6px;">🇮🇹 Useful Italian Phrases</div>
+    <div class="section-sub">A little Italian goes a long way — locals absolutely love it</div>
+    <div class="phrase-grid">
+      <div class="phrase-card">
+        <div class="phrase-it">Buongiorno / Buonasera</div>
+        <div class="phrase-en">Good morning / Good evening</div>
+        <div class="phrase-ctx">Always greet when entering a shop or restaurant</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Un tavolo per tre, per favore</div>
+        <div class="phrase-en">A table for three, please</div>
+        <div class="phrase-ctx">Use when arriving at a restaurant</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Il conto, per favore</div>
+        <div class="phrase-en">The bill, please</div>
+        <div class="phrase-ctx">Waiters won't bring it until you ask</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Senza peperoncino</div>
+        <div class="phrase-en">Without chilli</div>
+        <div class="phrase-ctx">Essential for the toddler — some dishes are spicy</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Mezza porzione, per favore</div>
+        <div class="phrase-en">Half portion, please</div>
+        <div class="phrase-ctx">For the little one — most restaurants are happy to do this</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Acqua naturale / frizzante</div>
+        <div class="phrase-en">Still / sparkling water</div>
+        <div class="phrase-ctx">Always asked at restaurants — naturale = still</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Dov'è il bagno?</div>
+        <div class="phrase-en">Where is the bathroom?</div>
+        <div class="phrase-ctx">Very useful with a toddler in tow!</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">È adatto ai bambini?</div>
+        <div class="phrase-en">Is it child-friendly?</div>
+        <div class="phrase-ctx">Most places will say yes — Italians love children</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Quanto costa?</div>
+        <div class="phrase-en">How much does it cost?</div>
+        <div class="phrase-ctx">Useful at markets and souvenir stalls</div>
+      </div>
+      <div class="phrase-card">
+        <div class="phrase-it">Grazie mille!</div>
+        <div class="phrase-en">Thank you so much!</div>
+        <div class="phrase-ctx">Always appreciated — say it with a smile</div>
+      </div>
+    </div>
+
+    <!-- RAINY DAY PLAN -->
+    <div class="section-title" style="font-size:1.2rem;margin-bottom:6px;">🌧️ Rainy Day Backup Plan</div>
+    <div class="section-sub">Late March can bring showers — here's how to adapt each day</div>
+    <div class="rain-grid">
+      <div class="rain-card">
+        <div class="rain-title">☔ Day 2 — Zoosafari in rain?</div>
+        <div class="rain-desc">No problem! The drive-through safari is done entirely from your car. Pack a waterproof layer for the walking areas.</div>
+        <div class="rain-note">✅ Barely affected by rain</div>
+      </div>
+      <div class="rain-card">
+        <div class="rain-title">☔ Day 3 — Bari Old Town in rain?</div>
+        <div class="rain-desc">The covered alleyways of Bari Vecchia are actually charming in light rain. Duck into the Basilica di San Nicola and the Cathedral — both completely indoor.</div>
+        <div class="rain-note">✅ Mostly fine — lots of indoor options</div>
+      </div>
+      <div class="rain-card">
+        <div class="rain-title">☔ Day 4 — Polignano in rain?</div>
+        <div class="rain-desc">The cliff views at Lama Monachile are dramatic in moody weather. If heavy rain, swap with an extra Old Town day or visit the Museo Nazionale Archeologico di Taranto instead.</div>
+        <div class="rain-note">⚠️ Reschedule if heavy rain</div>
+      </div>
+      <div class="rain-card">
+        <div class="rain-title">🏛️ Indoor Alternative: Galleria Murat</div>
+        <div class="rain-desc">Bari's beautiful covered 19th-century arcade in the new town. Perfect for a dry stroll with a stroller, cafés inside, and often hosts free exhibitions.</div>
+        <div class="rain-note">📍 Near the Teatro Petruzzelli</div>
+      </div>
+      <div class="rain-card">
+        <div class="rain-title">🏛️ Indoor Alternative: Museo Nazionale</div>
+        <div class="rain-desc">The Museo Nazionale Archeologico di Bari has fascinating Greek and Roman artefacts from Puglia. Toddler-friendly — big open halls and lots to look at.</div>
+        <div class="rain-note">📍 Bari city centre</div>
+      </div>
+      <div class="rain-card">
+        <div class="rain-title">🍕 Rainy afternoon idea</div>
+        <div class="rain-desc">Book a table at La Cantina dello Zio (Wed/Thu) for a long, relaxed lunch — warm atmosphere, great food, and no rush. Perfect way to wait out a shower.</div>
+        <div class="rain-note">📞 Remember to book ahead</div>
       </div>
     </div>
   </div>
