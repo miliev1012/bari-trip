@@ -395,6 +395,38 @@
     .place-card.gelato { border-color: #f9a8c9; }
     .badge.gelato { background: #fff0f5; color: #c0407a; }
 
+    /* ── EXPLORE / BY TOWN ── */
+    .town-block { margin-bottom: 36px; }
+    .town-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 20px;
+      background: var(--deep); color: var(--cream);
+      border-radius: 12px; margin-bottom: 16px;
+    }
+    .town-header-emoji { font-size: 1.6rem; flex-shrink: 0; }
+    .town-header-info { flex: 1; }
+    .town-header-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; }
+    .town-header-dist { font-size: 11px; color: #a89e92; margin-top: 3px; }
+    .town-header-badge {
+      font-size: 10px; letter-spacing: 0.5px;
+      padding: 4px 12px; border-radius: 20px;
+      background: rgba(196,98,45,0.3); color: #f0c4a8;
+      white-space: nowrap; font-weight: 500;
+    }
+    .option-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+    .option-tag { font-size: 10px; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+    .option-tag.kids    { background: #fff0f5; color: #c0407a; }
+    .option-tag.indoor  { background: #eef6ff; color: #1d6fa4; }
+    .option-tag.outdoor { background: #edf7ed; color: #2d6a2d; }
+    .option-tag.free    { background: #edf7ed; color: #2d6a2d; }
+    .option-tag.seasonal{ background: #fce8e8; color: #b53a3a; }
+    .option-tag.inplan  { background: #fef3e2; color: #92710a; }
+    .place-card.explore-kids     { border-color: #f9a8c9; }
+    .place-card.explore-outdoor  { border-color: var(--olive); }
+    .place-card.explore-museum   { border-color: var(--sky); }
+    .place-card.explore-cultural { border-color: var(--terracotta); }
+    .place-card.explore-closed   { border-color: var(--muted); opacity: 0.6; }
+
     /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: var(--cream); }
@@ -428,6 +460,7 @@
 <div class="tabs">
   <button class="tab-btn active" onclick="showPanel('itinerary', this)">📅 Itinerary</button>
   <button class="tab-btn" onclick="showPanel('places', this)">📍 Places</button>
+  <button class="tab-btn" onclick="showPanel('explore', this)">🗺️ By Town</button>
   <button class="tab-btn" onclick="showPanel('checklist', this)">✅ Checklist</button>
   <button class="tab-btn" onclick="showPanel('info', this)">ℹ️ Trip Info</button>
   <button class="tab-btn" onclick="showPanel('tips', this)">🛟 Tips & Safety</button>
@@ -1131,6 +1164,270 @@
         <div class="photo-tip">Have the camera ready during the drive-through! A giraffe stretching into the car window with a toddler is an unforgettable shot.</div>
       </div>
     </div>
+  </div>
+
+  <!-- ══ EXPLORE / BY TOWN PANEL ══ -->
+  <div id="panel-explore" class="panel">
+    <div class="section-title">Explore by Town</div>
+    <div class="section-sub">Extra options organised by destination — things to add if you have more time or want alternatives</div>
+
+    <!-- ── BARI ── -->
+    <div class="town-block">
+      <div class="town-header">
+        <div class="town-header-emoji">🏛️</div>
+        <div class="town-header-info">
+          <div class="town-header-name">Bari</div>
+          <div class="town-header-dist">Your base · Hotel Il Leon D'Oro · Days 1–5</div>
+        </div>
+        <div class="town-header-badge">📍 Base</div>
+      </div>
+      <div class="places-grid">
+        <div class="place-card explore-kids">
+          <div class="place-type">Interactive Museum · Ages 2–4 section</div>
+          <div class="place-name">Città dei Bambini e dei Ragazzi</div>
+          <div class="place-note">2,000m² hands-on science centre with a dedicated <strong>Playground 2–4 years</strong> zone built exactly for his age. Interactive discovery areas, play exhibits, and learning through fun. Best indoor option in Bari.</div>
+          <div class="option-tags">
+            <span class="option-tag kids">👶 Perfect for 3yr old</span>
+            <span class="option-tag indoor">🏠 Indoor</span>
+          </div>
+        </div>
+        <div class="place-card explore-kids">
+          <div class="place-type">Covered Amusement Park</div>
+          <div class="place-name">Gomma Park</div>
+          <div class="place-note">Indoor fun park near Parco 2 Giugno with a kids' mini coaster, bumper cars, and soft play structures. Fully sheltered — great backup on a rainy afternoon or when you need an easy activity.</div>
+          <div class="option-tags">
+            <span class="option-tag kids">👶 Toddler rides</span>
+            <span class="option-tag indoor">🏠 Indoor</span>
+          </div>
+        </div>
+        <div class="place-card explore-cultural">
+          <div class="place-type">Medieval Castle</div>
+          <div class="place-name">Castello Svevo (Norman-Swabian Castle)</div>
+          <div class="place-note">A proper medieval castle in the heart of Bari — towers, thick stone walls, a moat. Kids love the knight-and-castle feeling. Free to walk around the exterior. Easy to slot into the Old Town day.</div>
+          <div class="option-tags">
+            <span class="option-tag free">🎟️ Free exterior</span>
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+          </div>
+        </div>
+        <div class="place-card explore-outdoor">
+          <div class="place-type">Coastal Park · Playground</div>
+          <div class="place-name">Parco di Punta Perotti</div>
+          <div class="place-note">Large park along the coast with playgrounds, open fields, and sea views. Great for letting a toddler run freely. Often hosts local events and markets at weekends.</div>
+          <div class="option-tags">
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+            <span class="option-tag free">🎟️ Free</span>
+          </div>
+        </div>
+        <div class="place-card explore-outdoor">
+          <div class="place-type">City Beach</div>
+          <div class="place-name">Pane e Pomodoro Beach</div>
+          <div class="place-note">Bari's most popular city beach — sandy, calm, and accessible. Too cold to swim in late March but lovely for a coastal walk and letting him play with pebbles and watch the waves.</div>
+          <div class="option-tags">
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+            <span class="option-tag free">🎟️ Free</span>
+          </div>
+        </div>
+        <div class="place-card explore-museum">
+          <div class="place-type">Covered Arcade · Indoor Walk</div>
+          <div class="place-name">Galleria Murat</div>
+          <div class="place-note">Bari's beautiful 19th-century covered arcade near Teatro Petruzzelli. Perfect stroller-friendly dry stroll — cafés inside, often free exhibitions. Best rainy-day fallback in the city centre.</div>
+          <div class="option-tags">
+            <span class="option-tag indoor">🏠 Indoor</span>
+            <span class="option-tag free">🎟️ Free entry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── POLIGNANO A MARE ── -->
+    <div class="town-block">
+      <div class="town-header">
+        <div class="town-header-emoji">🌊</div>
+        <div class="town-header-info">
+          <div class="town-header-name">Polignano a Mare</div>
+          <div class="town-header-dist">~30 min drive south · Day 4 in itinerary</div>
+        </div>
+        <div class="town-header-badge">🚗 30 min</div>
+      </div>
+      <div class="places-grid">
+        <div class="place-card explore-kids">
+          <div class="place-type">Boat Tour · Sea Caves</div>
+          <div class="place-name">Grotte di Polignano — Sea Cave Boat Tour</div>
+          <div class="place-note">Short boat ride through the famous glowing sea caves around Polignano's cliffs. Absolutely magical — toddlers love it. ~€15–20 per adult, young children often free or a few euros. Departs from the small harbour near Lama Monachile.</div>
+          <div class="option-tags">
+            <span class="option-tag kids">👶 Magical for toddlers</span>
+            <span class="option-tag outdoor">🌊 Sea</span>
+          </div>
+        </div>
+        <div class="place-card explore-outdoor">
+          <div class="place-type">Beach Cove</div>
+          <div class="place-name">Cala Paura</div>
+          <div class="place-note">A quieter cove near Polignano's old town, less famous than Lama Monachile. Rocky shore with clear water — great for exploring and skipping stones with little ones.</div>
+          <div class="option-tags">
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+            <span class="option-tag free">🎟️ Free</span>
+          </div>
+        </div>
+        <div class="place-card explore-cultural">
+          <div class="place-type">Cliff Viewpoints · Old Town</div>
+          <div class="place-name">Upper Town Cliff Walks</div>
+          <div class="place-note">The upper streets of Polignano's old town are lined with balconies and terraces overlooking the sea — no steps needed for the stroller. Endlessly photogenic and completely free.</div>
+          <div class="option-tags">
+            <span class="option-tag free">🎟️ Free</span>
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FASANO ── -->
+    <div class="town-block">
+      <div class="town-header">
+        <div class="town-header-emoji">🦒</div>
+        <div class="town-header-info">
+          <div class="town-header-name">Fasano area</div>
+          <div class="town-header-dist">~50 min drive · Day 2 = Zoosafari already planned</div>
+        </div>
+        <div class="town-header-badge">🚗 50 min</div>
+      </div>
+      <div class="places-grid">
+        <div class="place-card explore-kids">
+          <div class="place-type">Adventure Park · Ages 2–5</div>
+          <div class="place-name">Parco Avventura Indiana</div>
+          <div class="place-note">Tree-trail park with a dedicated <strong>mini-course for ages 2–5</strong> — low to the ground so parents walk alongside. Perfect energy-burner for a toddler. Older ziplines and trails for adults too. Could pair with a Egnazia coast visit.</div>
+          <div class="option-tags">
+            <span class="option-tag kids">👶 Ages 2–5 trail</span>
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+          </div>
+        </div>
+        <div class="place-card explore-museum">
+          <div class="place-type">Archaeological Park + Museum</div>
+          <div class="place-name">Parco Archeologico di Egnazia</div>
+          <div class="place-note">Roman ruins right on the Adriatic coast — amphitheatre, ancient walls, and necropolis. Kids love running among ancient ruins. Combined ticket with the museum ~€10. Can pair with a beach stop at nearby Savelletri.</div>
+          <div class="place-hours">🕐 Daily from 8:30AM · ~€10 combined ticket</div>
+          <div class="option-tags">
+            <span class="option-tag outdoor">🌿 Outdoor ruins</span>
+          </div>
+        </div>
+        <div class="place-card explore-closed">
+          <div class="place-type">Water Park · Seasonal</div>
+          <div class="place-name">Aquapark Egnazia</div>
+          <div class="place-note">Southern Italy's largest water park — great in summer but closed in late March. Save this one for a future summer trip!</div>
+          <div class="option-tags">
+            <span class="option-tag seasonal">⚠️ Closed in March</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ALBEROBELLO ── -->
+    <div class="town-block">
+      <div class="town-header">
+        <div class="town-header-emoji">🏠</div>
+        <div class="town-header-info">
+          <div class="town-header-name">Alberobello</div>
+          <div class="town-header-dist">~1 hr drive · Optional in Day 5 itinerary</div>
+        </div>
+        <div class="town-header-badge">🚗 1 hr</div>
+      </div>
+      <div class="places-grid">
+        <div class="place-card explore-cultural">
+          <div class="place-type">UNESCO Village · Already in Day 5</div>
+          <div class="place-name">Trulli Rione Monti ⭐ 4.8</div>
+          <div class="place-note">The fairy-tale neighbourhood of cone-roofed trulli. Go at 8–9AM before tour groups arrive. Free to walk around — your toddler will think it's from a storybook. One of the most unique places in Italy.</div>
+          <div class="option-tags">
+            <span class="option-tag inplan">📅 In Day 5 plan</span>
+            <span class="option-tag free">🎟️ Free</span>
+            <span class="option-tag kids">👶 Kids love it</span>
+          </div>
+        </div>
+        <div class="place-card explore-museum">
+          <div class="place-type">Trullo Museum · Interior</div>
+          <div class="place-name">Trullo Sovrano</div>
+          <div class="place-note">The only two-storey trullo in the world, open as a museum. Kids can explore the tiny interior rooms, stone staircases, and conical ceilings. Fun and quick — takes about 20–30 minutes. Small entry fee.</div>
+          <div class="place-hours">🕐 Daily 10AM–6PM · Small entry fee</div>
+          <div class="option-tags">
+            <span class="option-tag kids">👶 Great to explore</span>
+            <span class="option-tag indoor">🏠 Indoor</span>
+          </div>
+        </div>
+        <div class="place-card explore-outdoor">
+          <div class="place-type">Shopping · Souvenirs</div>
+          <div class="place-name">Trulli Artisan Shops</div>
+          <div class="place-note">Many trulli in Alberobello double as artisan shops selling ceramics, miniature trullo figures, local foods, and crafts. Your toddler will want the mini trullo toy — budget for it!</div>
+          <div class="option-tags">
+            <span class="option-tag outdoor">🌿 Walkable</span>
+            <span class="option-tag free">🎟️ Free to browse</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── OSTUNI ── -->
+    <div class="town-block">
+      <div class="town-header">
+        <div class="town-header-emoji">🌿</div>
+        <div class="town-header-info">
+          <div class="town-header-name">Ostuni — The White City</div>
+          <div class="town-header-dist">~1 hr drive south-west · Full day trip</div>
+        </div>
+        <div class="town-header-badge">🚗 1 hr</div>
+      </div>
+      <div class="places-grid">
+        <div class="place-card explore-cultural">
+          <div class="place-type">Hilltop Old Town</div>
+          <div class="place-name">Ostuni Città Bianca</div>
+          <div class="place-note">One of the most beautiful hilltop towns in Puglia — all whitewashed walls and winding alleys. Sweeping views over the Valle d'Itria olive groves. Stroller-friendly on the main paths. Combine with the Adventure Park for a full day.</div>
+          <div class="option-tags">
+            <span class="option-tag free">🎟️ Free to walk</span>
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+          </div>
+        </div>
+        <div class="place-card explore-outdoor">
+          <div class="place-type">Adventure Park</div>
+          <div class="place-name">Ostuni Adventure Park</div>
+          <div class="place-note">Tree-trail adventure park with activities for different ages. Includes archery, falconry, carriage rides, and hiking trails. A great active half-day — pair it with a walk around Ostuni's old town for a full day out.</div>
+          <div class="option-tags">
+            <span class="option-tag kids">👶 Kids activity</span>
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── LECCE ── -->
+    <div class="town-block">
+      <div class="town-header">
+        <div class="town-header-emoji">🏺</div>
+        <div class="town-header-info">
+          <div class="town-header-name">Lecce — Baroque Capital</div>
+          <div class="town-header-dist">~1.5–2 hr drive south · Longer day trip</div>
+        </div>
+        <div class="town-header-badge">🚗 1.5–2 hr</div>
+      </div>
+      <div class="places-grid">
+        <div class="place-card explore-kids">
+          <div class="place-type">Children's Museum</div>
+          <div class="place-name">Museo dei Bambini di Lecce</div>
+          <div class="place-note">A dedicated interactive museum for ages 0.5–10 with fully hands-on exhibits built for learning through play. One of the best kids' museums in southern Italy. Combine with lunch in Lecce's stunning baroque old town.</div>
+          <div class="place-hours">🕐 Check museodeibambini.it for opening times</div>
+          <div class="option-tags">
+            <span class="option-tag kids">👶 Built for toddlers</span>
+            <span class="option-tag indoor">🏠 Indoor</span>
+          </div>
+        </div>
+        <div class="place-card explore-cultural">
+          <div class="place-type">Baroque Old Town</div>
+          <div class="place-name">Lecce Città Storica</div>
+          <div class="place-note">Known as the "Florence of the South" for its incredible ornate baroque architecture. Beautiful piazzas, cathedrals, and street food. Easy to combine with the Museo dei Bambini for a full and varied day trip.</div>
+          <div class="option-tags">
+            <span class="option-tag free">🎟️ Free to walk</span>
+            <span class="option-tag outdoor">🌿 Outdoor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ══ CHECKLIST PANEL ══ -->
