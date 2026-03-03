@@ -11,7 +11,7 @@ export const infoCards: InfoCard[] = [
   },
   {
     icon: '📍', title: 'Distances from Bari',
-    html: "🦁 Zoosafari Fasano: <strong>~1hr drive</strong><br>🌊 Polignano a Mare: <strong>~30min drive</strong><br>🏠 Alberobello: <strong>~1hr drive</strong><br>🏖️ Ostuni: <strong>~1.5hr drive</strong><br><br>All easily done as day trips with car!",
+    html: "🌊 Polignano a Mare: <strong>~30 min</strong><br>⚓ Monopoli: <strong>~36 min</strong><br>🦁 Zoosafari Fasano: <strong>~50 min</strong><br>🏠 Alberobello: <strong>~1 hr</strong><br>⚪ Locorotondo: <strong>~1 hr</strong><br>🌿 Ostuni: <strong>~1 hr</strong><br>🏺 Lecce: <strong>~1.5–2 hr</strong><br>🪨 Matera: <strong>~1.5 hr</strong><br><br>All reachable as day trips by car!",
   },
   {
     icon: '🌤️', title: 'Weather in Late March',
@@ -21,35 +21,51 @@ export const infoCards: InfoCard[] = [
 
 export const infoTips: TipBox[] = [
   {
-    icon: '🍼', heading: 'Travelling with a 3-year-old in Bari',
-    text: "Bari's Old Town (Bari Vecchia) has some cobblestones but is generally stroller-manageable on the main alleys. The Lungomare seafront is completely flat and perfect. Italian restaurants are very child-friendly — don't hesitate to ask for plain pasta or half-portions. Nap time in the car works perfectly with the day trip schedule.",
+    icon: '🍼', heading: 'Travelling with a 3-year-old in Puglia',
+    text: "Bari's Old Town has some cobblestones but is generally stroller-manageable on the main alleys. The Lungomare seafront is completely flat and perfect. Italian restaurants are very child-friendly — don't hesitate to ask for plain pasta (pasta al burro) or half-portions (mezza porzione). Matera's Sassi requires a baby carrier, not a stroller. Nap time in the car works perfectly with the day trip schedule.",
   },
   {
-    icon: '🚗', heading: 'Parking in Bari',
-    text: 'Parking in the centro storico can be tricky and expensive. Leave the car at or near the hotel for Old Town days and walk. For day trips (Fasano, Polignano, Alberobello) the car is ideal. Most attractions have free or cheap parking lots.',
+    icon: '🚗', heading: 'Parking Tips',
+    text: 'Leave the car at or near the hotel for Bari Old Town days and walk. For day trips the car is essential. Alberobello and Polignano have paid parking lots right at the entrance (~€5–10/day). Matera has large free parking areas above the Sassi — walk or take the panoramic escalator down.',
   },
   {
     icon: '🍽️', heading: 'Italian Dining Times',
-    text: 'Lunch is typically 12:30–2:30PM and dinner starts around 7:30–8PM. Restaurants often close between meals. For a toddler, arriving at 12:00 or 7:30 (when they open) means shorter waits and less noise. Always book dinner at La Cantina dello Zio ahead of time!',
+    text: 'Lunch is typically 12:30–2:30PM and dinner starts 7:30–8PM. Restaurants close between meals. For a toddler, arriving right when they open means shorter waits and less noise. Book La Cantina dello Zio and Antò at least 2 days ahead. Most smaller-town restaurants are walk-in friendly at lunch.',
+  },
+  {
+    icon: '☕', heading: 'Coffee & Café Culture',
+    text: 'Espresso is drunk standing at the bar — faster and cheaper than sitting. "Un caffè" = a single espresso. Add "macchiato" for a drop of milk. In Lecce, order caffè in ghiaccio con latte di mandorla (iced espresso with almond milk) — it\'s the local tradition and unmissable. Cappuccino is a breakfast drink only — locals never drink it after 11AM.',
+  },
+  {
+    icon: '🥙', heading: 'Street Food Strategy',
+    text: 'Street food is one of the highlights of this trip. In Bari: panzerotti (fried dough pockets) and sgagliozze (fried polenta). In Polignano: Pescaria seafood sandwiches. In Alberobello & Locorotondo: bombette (grilled pork skewers) from macellerie. In Lecce: rustico leccese (puff pastry) is a must — costs ~€2 from any bakery. Always eat standing — it\'s the authentic way.',
   },
 ];
 
 export const budgetCards: BudgetCard[] = [
+  { label: 'Espresso / Cappuccino', amount: '€1–2', note: 'Standing at the bar · sitting adds €1–2' },
+  { label: 'Street food snack', amount: '€1–4', note: 'Panzerotto, rustico leccese, pasticciotto' },
   { label: 'Lunch (per person)', amount: '€12–25', note: 'Mastro Ciccio ~€12–15 · Sit-down €20–25' },
   { label: 'Dinner (per person)', amount: '€25–45', note: 'Most restaurants in Old Town' },
+  { label: 'Aperol Spritz', amount: '€5–8', note: 'Often comes with free stuzzichini snacks' },
   { label: 'Zoosafari Family Ticket', amount: '~€140', note: 'Buy online at zoosafari.it' },
-  { label: 'Lemur Walk (Zoosafari)', amount: '+€3', note: 'Add-on inside the park' },
+  { label: 'Lemur Walk (Zoosafari)', amount: '+€3', note: 'Add-on inside the park — recommended' },
   { label: 'Cathedral of St. Sabinus', amount: '€9', note: 'Combined church + crypt ticket' },
-  { label: 'Polignano Boat Tour', amount: '~€15–20', note: 'Per adult · optional add-on' },
-  { label: 'Alberobello', amount: 'Free', note: 'Walk around the trulli village' },
+  { label: 'Polignano Boat Tour', amount: '~€15–20', note: 'Per adult · young children often free' },
+  { label: 'Alberobello Trulli Walk', amount: 'Free', note: 'Walk around the village · no entry fee' },
   { label: 'Basilica di San Nicola', amount: 'Free', note: 'Free entry, donations welcome' },
+  { label: 'Matera Sassi Walk', amount: 'Free', note: 'Free to explore · individual caves charge small fees' },
 ];
 
 export const hubRoutes: HubRoute[] = [
-  { time: '~30 min · SS16 coastal', emoji: '🌊', dest: 'Polignano a Mare', sub: 'Day 4 · Lama Monachile' },
-  { time: '~1 hour · SS16', emoji: '🦁', dest: 'Zoosafari Fasano', sub: 'Day 3 · Drive-through safari' },
+  { time: '~30 min · SS16 coastal', emoji: '🌊', dest: 'Polignano a Mare', sub: 'Day 4 · Lama Monachile cliff cove' },
+  { time: '~36 min · SS16', emoji: '⚓', dest: 'Monopoli', sub: 'Optional · Old harbour & castle' },
+  { time: '~50 min · SS16', emoji: '🦁', dest: 'Zoosafari Fasano', sub: 'Day 3 · Drive-through safari' },
   { time: '~1 hour', emoji: '🏠', dest: 'Alberobello', sub: 'Day 2 · UNESCO trulli village' },
-  { time: '~1.5 hours', emoji: '🌿', dest: 'Ostuni', sub: 'Optional · The White City' },
+  { time: '~1 hour', emoji: '⚪', dest: 'Locorotondo', sub: 'Optional · Whitewashed hilltop village' },
+  { time: '~1 hour', emoji: '🌿', dest: 'Ostuni', sub: 'Optional · The White City' },
+  { time: '~1.5–2 hrs · SP362', emoji: '🏺', dest: 'Lecce', sub: 'Optional · Baroque capital · rustico leccese' },
+  { time: '~1.5 hrs · SS96/SS7', emoji: '🪨', dest: 'Matera', sub: 'Optional · Sassi UNESCO cave city' },
 ];
 
 export const phrases: PhraseCard[] = [
