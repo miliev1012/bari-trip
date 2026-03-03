@@ -25,7 +25,7 @@ export default function TownBlock({ town, filter }: Props) {
       </div>
       <div className="places-grid">
         {visible.map((place, i) => (
-          <PlaceCard key={i} place={place} />
+          <PlaceCard key={i} place={place} townName={town.name} />
         ))}
       </div>
     </div>

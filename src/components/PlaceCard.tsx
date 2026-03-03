@@ -1,6 +1,8 @@
 import type { Place } from '../data/types';
 
-export default function PlaceCard({ place }: { place: Place }) {
+const MAPS_CATS = new Set(['restaurant', 'cafe', 'streetfood', 'gelato']);
+
+export default function PlaceCard({ place, townName }: { place: Place; townName: string }) {
   if (place.kind === 'food') {
     return (
       <div className="food-card" data-cat="food">
@@ -36,6 +38,16 @@ export default function PlaceCard({ place }: { place: Place }) {
             <span key={i} className={`option-tag ${tag.type}`}>{tag.label}</span>
           ))}
         </div>
+      )}
+      {MAPS_CATS.has(place.cat) && (
+        <a
+          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ' ' + townName + ' Italy')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="place-maps-link"
+        >
+          📍 View on Google Maps
+        </a>
       )}
     </div>
   );
