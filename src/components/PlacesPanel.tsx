@@ -13,6 +13,7 @@ const FILTERS: FilterOption[] = [
   { id: 'sightseeing', label: '🏛️ Sightseeing' },
   { id: 'activity',    label: '🎡 Activities' },
   { id: 'food',        label: '🍝 Must-Try Foods' },
+  { id: 'streetfood',  label: '🥙 Street Food' },
   { id: 'photo',       label: '📸 Photo Spots' },
 ];
 

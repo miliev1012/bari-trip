@@ -4,7 +4,7 @@ export type CardStyle =
   | 'snack' | 'eat' | 'sight' | 'shop' | 'gelato'
   | 'explore-kids' | 'explore-outdoor' | 'explore-museum'
   | 'explore-cultural' | 'explore-closed';
-export type Category = 'cafe' | 'restaurant' | 'gelato' | 'sightseeing' | 'activity' | 'food' | 'photo';
+export type Category = 'cafe' | 'restaurant' | 'gelato' | 'sightseeing' | 'activity' | 'food' | 'photo' | 'streetfood';
 export type OptionTagType = 'kids' | 'indoor' | 'outdoor' | 'free' | 'seasonal' | 'inplan';
 
 export interface TimelineItem {
