@@ -6,6 +6,7 @@ export const days: Day[] = [
     date: 'Saturday, March 28 — Arrival Day',
     subtitle: 'Settle in, first gelato, evening seafront stroll',
     badges: [{ label: 'Arrival', type: 'arrival' }],
+    weather: { icon: '🌧️', temp: '12° / 8°C', desc: 'Light rain expected', alert: 'rain' },
     nav: {
       todayPlace: '🛬 Arriving — Bari',
       tomorrowLabel: 'Tomorrow',
@@ -35,7 +36,7 @@ export const days: Day[] = [
         label: 'Afternoon Sightseeing',
         title: 'Bari Old Town — First Wander',
         desc: "Dive straight into Bari Vecchia — the ancient maze of whitewashed alleys, arches, and piazzas. Stroll to the Basilica di San Nicola (free entry, beautiful crypt), peek into the Cathedral of Saint Sabinus, and soak up the atmosphere of one of Italy's most characterful old towns. Watch for the orecchiette ladies in Largo Albicocca!",
-        tip: '🗺️ Get pleasantly lost — the Old Town is small enough that you can\'t go too far wrong',
+        tip: '☂️ Rain today? The covered alleyways of Bari Vecchia are charming even in the wet — duck into the Basilica di San Nicola or the Galleria Murat (19th-century arcade, café inside, stroller-friendly) if it picks up.',
       },
       {
         dot: 'special', emoji: '🏨',
@@ -57,6 +58,13 @@ export const days: Day[] = [
         desc: "Le Nicchie: open Sat ✅ | Antò: open Sat ✅. Both excellent authentic Puglian choices in the Old Town. Book ahead if possible.",
       },
       {
+        dot: 'sight', emoji: '🏛️',
+        label: 'Rainy Day Option',
+        title: 'Città dei Bambini e dei Ragazzi — Indoor Backup',
+        desc: "If the rain makes outdoor exploring miserable, Bari's interactive science museum for kids is a great alternative. Hands-on exhibits covering physics, biology, and technology — designed for children 6 months to 10 years. Also try the Galleria Murat (nearby 19th-century covered arcade with cafés inside — perfect stroller loop).",
+        tip: '☂️ Only if rain is heavy — save this for a genuine downpour, the Old Town alleys are beautiful even in light rain',
+      },
+      {
         dot: 'gelato', emoji: '🍦',
         label: 'Evening Treat',
         title: 'Gelato on Via Sparano',
@@ -70,6 +78,7 @@ export const days: Day[] = [
     date: 'Sunday, March 29 — Alberobello & Locorotondo',
     subtitle: "Trulli fairy-tale village + whitewashed hilltop town in Valle d'Itria",
     badges: [{ label: "🏠 Valle d'Itria", type: 'day-trip' }],
+    weather: { icon: '☀️', temp: '14° / 9°C', desc: 'Clear skies — perfect day trip!' },
     nav: {
       todayPlace: '🏠 Alberobello & Locorotondo',
       tomorrowLabel: 'Tomorrow',
@@ -150,6 +159,7 @@ export const days: Day[] = [
       { label: '🦁 Safari Day', type: 'safari' },
       { label: '⚓ +Monopoli?', type: 'day-trip' },
     ],
+    weather: { icon: '🌤️', temp: '13° / 10°C', desc: 'Dry — ideal safari weather' },
     nav: {
       todayPlace: '🦁 Zoosafari + Monopoli',
       tomorrowLabel: 'Tomorrow',
@@ -227,6 +237,7 @@ export const days: Day[] = [
     date: 'Tuesday, March 31 — Polignano a Mare',
     subtitle: 'Cliff coves, Old Town, blue Adriatic (~30min drive)',
     badges: [{ label: '🌊 Day Trip', type: 'day-trip' }],
+    weather: { icon: '🌤️', temp: '14° / 10°C', desc: 'Mostly dry (0.5mm) — good for the coast' },
     nav: {
       todayPlace: '🌊 Polignano a Mare',
       tomorrowLabel: 'Tomorrow',
@@ -266,9 +277,10 @@ export const days: Day[] = [
       },
       {
         dot: 'nap', emoji: '😴',
-        label: 'Nap Time',
-        title: 'Drive back to Bari or stroller walk in shade',
-        desc: "The 30-min drive back is perfect for a car nap. Or find a shaded piazza in Polignano for stroller rest.",
+        label: 'Nap Time / Optional Add-On',
+        title: 'Drive back to Bari — or add Grotte di Castellana!',
+        desc: "The 30-min drive back is perfect for a car nap. OR: extend the day with a stop at the Grotte di Castellana — only 20 minutes from Polignano. One of Italy's most spectacular cave systems, carved 70m underground. Short guided tour: ~50 minutes. Children under 4 are FREE. The cool, dramatic limestone chambers are genuinely impressive and very manageable for a toddler.",
+        tip: '🪨 Short tour ticket: ~€15/adult · under 4s FREE · no strollers inside — baby carrier recommended · caves are 15°C year-round, bring a light layer',
       },
       {
         dot: 'snack', emoji: '🧁',
@@ -302,6 +314,7 @@ export const days: Day[] = [
     date: 'Wednesday, April 1 — Checkout & Last Bari Morning',
     subtitle: 'Basilica di San Nicola · Lungomare · orecchiette ladies · fly home',
     badges: [{ label: '🧳 Checkout', type: 'checkout' }],
+    weather: { icon: '🌧️', temp: '12° / 9°C', desc: 'Rainy morning (6.3mm)', alert: 'rain' },
     nav: {
       todayPlace: '🧳 Checkout — Bari',
       tomorrowLabel: 'Then',
@@ -341,9 +354,10 @@ export const days: Day[] = [
       },
       {
         dot: 'lunch', emoji: '🍽️',
-        label: 'Final Lunch',
-        title: 'Mastro Ciccio or Antò Ristorante',
-        desc: "Mastro Ciccio open daily from 10AM — perfect for a quick final panzerotto or focaccia. Or Antò for a proper sit-down last meal (open Wed ❌ — closed). Mastro Ciccio is the best bet on a Wednesday!",
+        label: 'Final Lunch — Special One',
+        title: '⭐ La Cantina dello Zio — Open TODAY (Wed only!)',
+        desc: "Wednesday is one of only two days La Cantina dello Zio is open — and it's your last day! Opens 11:30AM, perfectly timed after the 11AM checkout. The most celebrated restaurant in Bari: complimentary bruschetta and limoncello, the best orecchiette al ragù in Puglia, warm family atmosphere. Make this your farewell meal — you've earned it.",
+        tip: "📞 BOOK AHEAD: +39 329 229 9403 — do this the night before if you haven't already! Fallback: Mastro Ciccio (open daily from 10AM, excellent panzerotti & focaccia)",
       },
       {
         dot: 'special', emoji: '✈️',

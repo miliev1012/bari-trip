@@ -6,6 +6,8 @@ const TABS: Tab[] = [
   { id: 'checklist', label: '✅ Checklist' },
   { id: 'info',      label: 'ℹ️ Trip Info' },
   { id: 'tips',      label: '🛟 Tips & Safety' },
+  { id: 'food',      label: '🍝 Food Guide' },
+  { id: 'map',       label: '🗺️ Map' },
 ];
 
 interface Props {

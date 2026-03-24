@@ -27,11 +27,19 @@ export interface DayNavInfo {
   tomorrowPlace: string;
 }
 
+export interface DayWeather {
+  icon: string;
+  temp: string;
+  desc: string;
+  alert?: string;
+}
+
 export interface Day {
   num: number;
   date: string;
   subtitle: string;
   badges: DayBadge[];
+  weather: DayWeather;
   nav: DayNavInfo;
   timeline: TimelineItem[];
 }

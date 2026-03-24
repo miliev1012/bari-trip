@@ -6,9 +6,11 @@ import PlacesPanel from './components/PlacesPanel';
 import ChecklistPanel from './components/ChecklistPanel';
 import InfoPanel from './components/InfoPanel';
 import TipsPanel from './components/TipsPanel';
+import GlossaryPanel from './components/GlossaryPanel';
+import MapPanel from './components/MapPanel';
 import { days } from './data/days';
 
-type PanelId = 'itinerary' | 'places' | 'checklist' | 'info' | 'tips';
+type PanelId = 'itinerary' | 'places' | 'checklist' | 'info' | 'tips' | 'food' | 'map';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<PanelId>('itinerary');
@@ -50,6 +52,18 @@ export default function App() {
         {activeTab === 'tips' && (
           <div className="panel active">
             <TipsPanel />
+          </div>
+        )}
+
+        {activeTab === 'food' && (
+          <div className="panel active">
+            <GlossaryPanel />
+          </div>
+        )}
+
+        {activeTab === 'map' && (
+          <div className="panel active">
+            <MapPanel />
           </div>
         )}
       </div>

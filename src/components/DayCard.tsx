@@ -20,6 +20,9 @@ export default function DayCard({ day, defaultOpen }: { day: Day; defaultOpen?: 
           {day.badges.map((b, i) => (
             <span key={i} className={`badge ${b.type}`}>{b.label}</span>
           ))}
+          <span className={`weather-pill${day.weather.alert ? ' rainy' : ''}`}>
+            {day.weather.icon} {day.weather.temp} · {day.weather.desc}
+          </span>
         </div>
         <span className="chevron">▾</span>
       </div>

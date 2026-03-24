@@ -331,6 +331,27 @@ body {
 .badge.arrival  { background: #f0ecfe; color: #5a30b0; border: 1px solid #c8b8ee; }
 .badge.checkout { background: var(--coral-pale); color: var(--coral-deep); border: 1px solid rgba(224,92,58,0.3); }
 
+.weather-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: #edf7ed;
+  color: #2d6a2d;
+  border: 1px solid #b8ddb8;
+  white-space: nowrap;
+}
+
+.weather-pill.rainy {
+  background: #e8f0fe;
+  color: #3050a0;
+  border-color: #b0c4f0;
+}
+
 .chevron {
   font-size: 16px;
   color: var(--muted-light);
@@ -975,6 +996,96 @@ body {
 .option-tag.free        { background: #edf7ed; color: #2d6a2d; }
 .option-tag.seasonal    { background: var(--coral-pale); color: var(--coral-deep); }
 .option-tag.inplan      { background: var(--lemon-pale); color: var(--lemon-deep); }
+
+/* ── FOOD GLOSSARY ────────────────────────────────────────────────────── */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.glossary-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--border);
+  border-left: 3px solid var(--coral);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.glossary-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.glossary-emoji { font-size: 26px; line-height: 1; margin-bottom: 2px; }
+.glossary-cat   { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.6px; color: var(--muted-light); font-weight: 600; }
+.glossary-name  { font-size: 1rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.glossary-pron  { font-size: 11px; color: var(--teal-deep); font-style: italic; font-weight: 500; }
+.glossary-desc  { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-top: 2px; }
+
+.glossary-tip {
+  font-size: 11.5px;
+  color: var(--teal-deep);
+  background: var(--teal-pale);
+  border: 1px solid rgba(0,159,183,0.2);
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 4px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ── MAP PANEL ────────────────────────────────────────────────────────── */
+.map-container {
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.map-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.map-legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+}
+
+.map-tip {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  padding: 10px;
+  background: var(--teal-pale);
+  border-radius: 10px;
+  border: 1px solid rgba(0,159,183,0.15);
+}
+
+/* Leaflet z-index fix — keep map controls below our sticky tabs */
+.leaflet-top  { z-index: 10 !important; }
+.leaflet-pane { z-index: 4 !important; }
 
 /* ── SCROLLBAR ────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; height: 5px; }
