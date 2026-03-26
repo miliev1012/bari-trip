@@ -6,7 +6,7 @@ export const days: Day[] = [
     date: 'Saturday, March 28 — Arrival Day',
     subtitle: 'Settle in, first gelato, evening seafront stroll',
     badges: [{ label: 'Arrival', type: 'arrival' }],
-    weather: { icon: '🌧️', temp: '12° / 8°C', desc: 'Light rain expected', alert: 'rain' },
+    weather: { icon: '🌧️', temp: '12° / 9°C', desc: 'Rain showers (~5–8mm) — heavier than average', alert: 'rain' },
     nav: {
       todayPlace: '🛬 Arriving — Bari',
       tomorrowLabel: 'Tomorrow',
@@ -36,7 +36,7 @@ export const days: Day[] = [
         label: 'Afternoon Sightseeing',
         title: 'Bari Old Town — First Wander',
         desc: "Dive straight into Bari Vecchia — the ancient maze of whitewashed alleys, arches, and piazzas. Stroll to the Basilica di San Nicola (free entry, beautiful crypt), peek into the Cathedral of Saint Sabinus, and soak up the atmosphere of one of Italy's most characterful old towns. Watch for the orecchiette ladies in Largo Albicocca!",
-        tip: '☂️ Rain today? The covered alleyways of Bari Vecchia are charming even in the wet — duck into the Basilica di San Nicola or the Galleria Murat (19th-century arcade, café inside, stroller-friendly) if it picks up.',
+        tip: '☂️ Rain today? The covered alleyways of Bari Vecchia are charming even in the wet — duck into the Basilica di San Nicola or Spazio Murat (Piazza del Ferrarese 1, free cultural space) if it picks up.',
       },
       {
         dot: 'special', emoji: '🏨',
@@ -58,13 +58,6 @@ export const days: Day[] = [
         desc: "Le Nicchie: open Sat ✅ | Antò: open Sat ✅. Both excellent authentic Puglian choices in the Old Town. Book ahead if possible.",
       },
       {
-        dot: 'sight', emoji: '🏛️',
-        label: 'Rainy Day Option',
-        title: 'Città dei Bambini e dei Ragazzi — Indoor Backup',
-        desc: "If the rain makes outdoor exploring miserable, Bari's interactive science museum for kids is a great alternative. Hands-on exhibits covering physics, biology, and technology — designed for children 6 months to 10 years. Also try the Galleria Murat (nearby 19th-century covered arcade with cafés inside — perfect stroller loop).",
-        tip: '☂️ Only if rain is heavy — save this for a genuine downpour, the Old Town alleys are beautiful even in light rain',
-      },
-      {
         dot: 'gelato', emoji: '🍦',
         label: 'Evening Treat',
         title: 'Gelato on Via Sparano',
@@ -78,7 +71,7 @@ export const days: Day[] = [
     date: 'Sunday, March 29 — Alberobello & Locorotondo',
     subtitle: "Trulli fairy-tale village + whitewashed hilltop town in Valle d'Itria",
     badges: [{ label: "🏠 Valle d'Itria", type: 'day-trip' }],
-    weather: { icon: '☀️', temp: '14° / 9°C', desc: 'Clear skies — perfect day trip!' },
+    weather: { icon: '🌤️', temp: '15° / 9°C', desc: 'Morning clouds clearing — mostly dry, good day trip' },
     nav: {
       todayPlace: '🏠 Alberobello & Locorotondo',
       tomorrowLabel: 'Tomorrow',
@@ -114,7 +107,7 @@ export const days: Day[] = [
         dot: 'lunch', emoji: '🍽️',
         label: 'Lunch — Alberobello',
         title: 'La Lira Focacceria',
-        desc: "Best focaccia and stuffed puccia sandwiches in Alberobello — everything made fresh with local ingredients. Fast, great value, perfect for a toddler. Or try Trulli e Puglia Wine Bar for a relaxed sit-down with local wine and charcuterie boards.",
+        desc: "Best focaccia and stuffed puccia sandwiches in Alberobello — everything made fresh with local ingredients. Fast, great value, perfect for a toddler.",
       },
       {
         dot: 'special', emoji: '🚗',
@@ -159,7 +152,7 @@ export const days: Day[] = [
       { label: '🦁 Safari Day', type: 'safari' },
       { label: '⚓ +Monopoli?', type: 'day-trip' },
     ],
-    weather: { icon: '🌤️', temp: '13° / 10°C', desc: 'Dry — ideal safari weather' },
+    weather: { icon: '🌤️', temp: '15° / 8°C', desc: 'Dry and mild — ideal safari weather' },
     nav: {
       todayPlace: '🦁 Zoosafari + Monopoli',
       tomorrowLabel: 'Tomorrow',
@@ -194,14 +187,14 @@ export const days: Day[] = [
       },
       {
         dot: 'nap', emoji: '🚗',
-        label: 'Optional — If Energy Allows',
+        label: 'Afternoon Drive',
         title: 'Drive to Monopoli (~20 min from Fasano)',
         desc: "If the little one isn't too tired after the safari, Monopoli is just 20 minutes away. A gorgeous coastal town with a stunning old harbour, a 16th-century castle on the sea, and the family-friendly Cala Porta Vecchia beach — sandy, shallow water, perfect for toddlers.",
         tip: '🏖️ Cala Porta Vecchia is 2 min from the old town — sandy bottom, calm water, ideal for little ones',
       },
       {
         dot: 'sight', emoji: '⚓',
-        label: 'Optional — Monopoli Afternoon',
+        label: 'Monopoli Afternoon',
         title: 'Porto Vecchio & Castello di Carlo V',
         desc: "Stroll around Monopoli's gorgeous old harbour — colourful fishing boats, a working lighthouse, and the 16th-century castle perched right on the sea. Even an hour here is worth it. Grab a gelato and enjoy the views before driving back to Bari.",
       },
@@ -237,7 +230,7 @@ export const days: Day[] = [
     date: 'Tuesday, March 31 — Polignano a Mare',
     subtitle: 'Cliff coves, Old Town, blue Adriatic (~30min drive)',
     badges: [{ label: '🌊 Day Trip', type: 'day-trip' }],
-    weather: { icon: '🌤️', temp: '14° / 10°C', desc: 'Mostly dry (0.5mm) — good for the coast' },
+    weather: { icon: '⛅', temp: '14° / 8°C', desc: 'Forecasts conflict — could be dry or heavy rain · check again the night before', alert: 'rain' },
     nav: {
       todayPlace: '🌊 Polignano a Mare',
       tomorrowLabel: 'Tomorrow',
@@ -266,8 +259,9 @@ export const days: Day[] = [
       {
         dot: 'lunch', emoji: '🦑',
         label: 'Lunch',
-        title: 'Polignano Old Town restaurant',
-        desc: "Many great seafood restaurants in Polignano's old town perched over the sea. Ask locals for the best option of the day.",
+        title: 'Pescaria — The Seafood Sandwich Bar',
+        desc: "One of the most famous street food spots in all of Puglia. Order the polpo (octopus) panino or the pesce spada burger, wrapped in paper, eaten on the cliff-side terrace with the Adriatic right below. On Piazza San Benedetto — opens at 12PM.",
+        tip: '⚠️ Expect a short queue at weekends — go early or just before 12PM',
       },
       {
         dot: 'gelato', emoji: '🍦',
@@ -276,11 +270,11 @@ export const days: Day[] = [
         desc: "Grab artisan gelato from one of the small shops in Polignano's old town, steps from the cliff edge. Eating a cone with the Adriatic below is absolutely magical. Try mandorla (almond) or fico (fig) — both local Puglian favourites!",
       },
       {
-        dot: 'nap', emoji: '😴',
-        label: 'Nap Time / Optional Add-On',
-        title: 'Drive back to Bari — or add Grotte di Castellana!',
-        desc: "The 30-min drive back is perfect for a car nap. OR: extend the day with a stop at the Grotte di Castellana — only 20 minutes from Polignano. One of Italy's most spectacular cave systems, carved 70m underground. Short guided tour: ~50 minutes. Children under 4 are FREE. The cool, dramatic limestone chambers are genuinely impressive and very manageable for a toddler.",
-        tip: '🪨 Short tour ticket: ~€15/adult · under 4s FREE · no strollers inside — baby carrier recommended · caves are 15°C year-round, bring a light layer',
+        dot: 'nap', emoji: '🚗',
+        label: 'Drive Back — ~30 minutes',
+        title: 'Polignano a Mare → Bari',
+        desc: "Perfect car nap for the little one on the way back. Easy drive up the SS16 coastal road.",
+        tip: '🪨 Want to extend the day? Grotte di Castellana is only 20 min from Polignano — spectacular cave system, under 4s FREE, short tour ~50 min. Details in the Places tab.',
       },
       {
         dot: 'snack', emoji: '🧁',
@@ -314,7 +308,7 @@ export const days: Day[] = [
     date: 'Wednesday, April 1 — Checkout & Last Bari Morning',
     subtitle: 'Basilica di San Nicola · Lungomare · orecchiette ladies · fly home',
     badges: [{ label: '🧳 Checkout', type: 'checkout' }],
-    weather: { icon: '🌧️', temp: '12° / 9°C', desc: 'Rainy morning (6.3mm)', alert: 'rain' },
+    weather: { icon: '🌧️', temp: '14° / 9°C', desc: 'Rainy day (~4–13mm) — easy checkout morning', alert: 'rain' },
     nav: {
       todayPlace: '🧳 Checkout — Bari',
       tomorrowLabel: 'Then',
