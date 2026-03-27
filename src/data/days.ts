@@ -79,7 +79,7 @@ export const days: Day[] = [
     date: 'Sunday, March 29 — Alberobello & Locorotondo',
     subtitle: "Trulli fairy-tale village + whitewashed hilltop town in Valle d'Itria",
     badges: [{ label: "🏠 Valle d'Itria", type: 'day-trip' }],
-    weather: { icon: '🌦️', temp: '15° / 10°C', desc: 'Light sprinkles (~1mm) · breaks of sunshine in the afternoon — still a good day trip' },
+    weather: { icon: '🌤️', temp: '15° / 10°C', desc: 'Broken clouds, dry (0mm) — good day for the trulli' },
     nav: {
       todayPlace: '🏠 Alberobello & Locorotondo',
       tomorrowLabel: 'Tomorrow',
@@ -163,7 +163,7 @@ export const days: Day[] = [
       { label: '🦁 Safari Day', type: 'safari' },
       { label: '⚓ +Monopoli?', type: 'day-trip' },
     ],
-    weather: { icon: '🌤️', temp: '15° / 8°C', desc: 'Dry and mild — ideal safari weather' },
+    weather: { icon: '🌤️', temp: '15° / 9°C', desc: 'Cloudy but dry — trace sprinkles possible late, ideal safari weather' },
     nav: {
       todayPlace: '🦁 Zoosafari + Monopoli',
       tomorrowLabel: 'Tomorrow',
@@ -241,7 +241,7 @@ export const days: Day[] = [
     date: 'Tuesday, March 31 — Polignano a Mare & Monopoli',
     subtitle: 'Cliff coves & iconic Adriatic coast — two towns, one day (~30–36min drive)',
     badges: [{ label: '🌊 Polignano', type: 'day-trip' }, { label: '⚓ Monopoli', type: 'day-trip' }],
-    weather: { icon: '🌧️', temp: '13° / 8°C', desc: 'Rain confirmed (~6.7mm) · decreasing cloudiness through the afternoon', alert: 'rain' },
+    weather: { icon: '🌧️', temp: '13° / 8°C', desc: 'Rain showers (~6.5mm), overcast all day — plan outdoor highlights carefully', alert: 'rain' },
     nav: {
       todayPlace: '🌊 Polignano + ⚓ Monopoli',
       tomorrowLabel: 'Tomorrow',
@@ -342,7 +342,7 @@ export const days: Day[] = [
     date: 'Wednesday, April 1 — Checkout & Last Bari Morning',
     subtitle: 'Basilica di San Nicola · Lungomare · orecchiette ladies · fly home',
     badges: [{ label: '🧳 Checkout', type: 'checkout' }],
-    weather: { icon: '🌤️', temp: '14° / 9°C', desc: 'Dry! 0mm forecast · mostly cloudy but strong winds (42 km/h) — much better than expected' },
+    weather: { icon: '🌦️', temp: '14° / 10°C', desc: 'Light drizzle (~2.2mm), overcast · strong winds (47 km/h) — easy checkout morning', alert: 'rain' },
     nav: {
       todayPlace: '🧳 Checkout — Bari',
       tomorrowLabel: 'Then',
