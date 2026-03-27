@@ -24,13 +24,14 @@ export const days: Day[] = [
         label: 'Optional — If Arriving Before 1 PM',
         title: 'Trani Detour — Cathedral on the Sea (~45 min north)',
         desc: "If your flight lands before 1PM, don't drive straight to Bari — swing north to Trani first. It's 45 minutes from the airport and one of the most beautiful harbours in Puglia: a 12th-century Norman cathedral perched right on the Adriatic, a medieval castle at the water's edge, and a gorgeous old port full of fishing boats. Spend 2 hours exploring, then drive south ~45 min to Bari for the 3PM hotel check-in.",
-        tip: '📍 Park at Parcheggio Via Aldo Moro (free, central). Walk straight to the harbour front. Full details in the 🧭 Day Trips tab.',
+        tip: '🅿️ Paid parking at Parcheggio Piazza Castello (right by the cathedral) · or free bus parking near Via Alvarez (10 min walk to the harbour). Full details in the 🧭 Day Trips tab.',
       },
       {
         dot: 'special', emoji: '🚗',
         label: 'Drive — ~20 minutes',
         title: "Airport → Hotel Il Leon D'Oro",
         desc: "Drop luggage at the hotel reception — rooms available after 3PM but they'll store bags for you. Quick freshen up, then straight out to explore.",
+        tip: '🅿️ Hotel garage costs €30/day — call ahead to confirm a space (limited). Note your rental car plate at pickup. If hotel is full: blue-line street parking around Piazza Aldo Moro (~€1.50/hr).',
       },
       {
         dot: 'snack', emoji: '☕',
@@ -96,6 +97,7 @@ export const days: Day[] = [
         label: 'Drive — ~1 hour',
         title: 'Bari → Alberobello',
         desc: "Leave by 8:30AM to arrive around 9:30AM before the crowds build. Easy drive through the Puglian countryside.",
+        tip: '🅿️ Park at Parcheggio Viale Indipendenza — €6 all-day flat rate, 3 min walk to the trulli. Enter your rental plate at the machine. Arrive before 9:30AM — spaces fill by 10AM.',
       },
       {
         dot: 'sight', emoji: '🏠',
@@ -121,6 +123,7 @@ export const days: Day[] = [
         label: 'Drive — ~15 minutes',
         title: 'Alberobello → Locorotondo',
         desc: "Just a short hop between the two Valle d'Itria gems. Perfect for a car nap if the little one needs a rest after a busy morning.",
+        tip: '🅿️ Park at the underground garage at Piazza Aldo Moro (town entrance). ⚠️ Centro storico is a camera-enforced ZTL — driving in = automatic €80–150 fine, billed to the rental company weeks later.',
       },
       {
         dot: 'sight', emoji: '⚪',
@@ -197,7 +200,7 @@ export const days: Day[] = [
         dot: 'nap', emoji: '🚗',
         label: 'Afternoon Drive',
         title: 'Drive to Monopoli (~20 min from Fasano)',
-        desc: "If the little one isn't too tired after the safari, Monopoli is just 20 minutes away. A gorgeous coastal town with a stunning old harbour, a 16th-century castle on the sea, and the family-friendly Cala Porta Vecchia beach — sandy, shallow water, perfect for toddlers.",
+        desc: "If the little one isn't too tired after the safari, Monopoli is just 20 minutes away. A gorgeous coastal town with a stunning old harbour, a 16th-century castle on the sea, and the family-friendly Cala Porta Vecchia beach — sandy, shallow water, perfect for toddlers. Park free on Via Antonelli or Via Arenazza (10 min walk to old town) — the historic centre is a ZTL zone, do not drive in.",
         tip: '🏖️ Cala Porta Vecchia is 2 min from the old town — sandy bottom, calm water, ideal for little ones',
       },
       {
@@ -255,7 +258,8 @@ export const days: Day[] = [
         dot: 'special', emoji: '🚗',
         label: 'Drive — ~30 minutes',
         title: 'Bari → Polignano a Mare',
-        desc: "Take the SS16 coastal road south. Easy parking near the old town. Arrive by 10AM to beat any crowds.",
+        desc: "Take the SS16 coastal road south. Park at Piazzale Marco Polo (free, 5–10 min walk to old town and beach). Arrive by 10AM to beat any crowds.",
+        tip: '🅿️ At Marco Polo: blue spots = paid (€1–2/hr at the machine). Yellow lines = residents only — instant fine. The train station lot nearby is free, unpaved, ~200 spaces, 6 min walk.',
       },
       {
         dot: 'sight', emoji: '🏖️',
@@ -295,7 +299,7 @@ export const days: Day[] = [
         dot: 'special', emoji: '🚗',
         label: 'Drive — ~15 minutes',
         title: 'Polignano a Mare → Monopoli',
-        desc: "Just a short hop south on the SS16 — the two towns are practically neighbours. Perfect car nap window for the little one.",
+        desc: "Just a short hop south on the SS16 — the two towns are practically neighbours. Perfect car nap window for the little one. Park free on Via Antonelli or Via Arenazza (10 min walk). ⚠️ ZTL zone — do not drive into the historic centre.",
         tip: '🪨 Skip the drive and add Grotte di Castellana instead? Only 20 min from Polignano — caves, under 4s FREE, ~50 min tour. Details in the Places tab.',
       },
       {
