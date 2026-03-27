@@ -151,6 +151,40 @@ export const photoSpots: PhotoSpot[] = [
     bestTime: '🕐 Late afternoon · Warm light on the Sassi',
     day: 'Optional day trip',
   },
+  // Trani
+  {
+    town: 'Trani',
+    emoji: '⛪',
+    spot: 'Cattedrale di Trani — Cathedral above the Sea',
+    tip: 'The cathedral stands on the rocks with the open Adriatic on three sides — shoot from the waterfront at low angle with the sea in the foreground. Morning light hits the Norman stone beautifully from the east.',
+    bestTime: '🕐 8–11AM · East-facing, morning light ideal',
+    day: 'Optional day trip',
+  },
+  {
+    town: 'Trani',
+    emoji: '⚓',
+    spot: 'Porto di Trani — Harbour Reflections',
+    tip: 'The medieval harbour at golden hour — cathedral reflecting in the water, colourful fishing boats moored below, and the castle at the far end. One of the most painterly harbours in Puglia.',
+    bestTime: '🕐 30 min before sunset · West-facing harbour',
+    day: 'Optional day trip',
+  },
+  // Gravina
+  {
+    town: 'Gravina',
+    emoji: '🏔️',
+    spot: 'Ponte Viadotto — Ancient Bridge over the Gorge',
+    tip: 'Shoot from below the ancient aqueduct bridge across the ravine for a dramatic low-angle view of the arches against the gorge wall. Cave dwellings are visible cut into the cliff on the far side.',
+    bestTime: '🕐 Late afternoon · Warm side-light on the stonework',
+    day: 'Optional day trip',
+  },
+  {
+    town: 'Gravina',
+    emoji: '⛪',
+    spot: 'Gravina Gorge — Cave Church Vista',
+    tip: 'The view from the ravine edge looking across at the cave churches carved into the cliff face — otherworldly and almost completely unknown to tourists. Wide-angle lens captures the full scale of the gorge.',
+    bestTime: '🕐 Morning or late afternoon · Avoid harsh midday',
+    day: 'Optional day trip',
+  },
   // Ostuni
   {
     town: 'Ostuni',
@@ -170,5 +204,5 @@ export const photoSpots: PhotoSpot[] = [
   },
 ];
 
-export const TOWNS = ['All', 'Bari', 'Alberobello', 'Locorotondo', 'Polignano', 'Monopoli', 'Fasano', 'Matera', 'Ostuni'] as const;
+export const TOWNS = ['All', 'Bari', 'Alberobello', 'Locorotondo', 'Polignano', 'Monopoli', 'Fasano', 'Matera', 'Ostuni', 'Trani', 'Gravina'] as const;
 export type PhotoTown = typeof TOWNS[number];

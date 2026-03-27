@@ -15,6 +15,24 @@ export interface DayTripOption {
 
 export const dayTripOptions: DayTripOption[] = [
   {
+    emoji: '⛪',
+    name: 'Trani — Cathedral on the Sea',
+    drive: '~45 min from Bari',
+    badge: '🚗 45 min',
+    tagline: "Puglia's most photogenic harbour town — a 12th-century Norman cathedral built directly on the Adriatic, a medieval castle at the water's edge, and a beautiful fishing port. Easy half-day from Bari.",
+    highlights: [
+      'Cattedrale di Trani — 12th-century Norman cathedral perched above the sea',
+      'Porto di Trani — medieval harbour with colourful fishing boats',
+      'Castello Svevo — 13th-century waterfront castle (free exterior)',
+      'Jewish quarter — one of the oldest medieval Jewish districts in southern Italy',
+    ],
+    toddlerNote: 'The harbour front and cathedral square are completely flat — perfect for the stroller. Easy pace, open spaces, and plenty of pigeons to chase.',
+    toddlerRating: 3,
+    bestDay: 'Perfect as a 2–3 hour add-on. Day 1 if arriving early (flight before 1PM) — Trani is 45 min from the airport, then drive south to Bari for 3PM check-in.',
+    duration: '2–3 hours',
+    mustDo: 'Cathedral at the water\'s edge + harbour walk + espresso on the piazza looking out to sea',
+  },
+  {
     emoji: '🌿',
     name: 'Ostuni — The White City',
     drive: '~1 hr from Bari',
@@ -66,6 +84,25 @@ export const dayTripOptions: DayTripOption[] = [
     duration: '4–5 hours · Large free parking above the Sassi',
     mustDo: 'Piazzetta Pascoli panorama at dawn + Casa Grotta cave rooms + Pane di Matera IGP sourdough',
     warn: '⚠️ Baby carrier essential — stroller is impossible in the Sassi. Large free parking at the top, then walk or take the escalator down.',
+  },
+  {
+    emoji: '🏔️',
+    name: 'Gravina in Puglia — The Hidden Gorge City',
+    drive: '~55 min from Bari',
+    badge: '🚗 55 min',
+    tagline: "One of Puglia's most dramatic and overlooked towns — a medieval city on the edge of a deep ravine, with a Roman aqueduct bridge, cave churches, and almost no tourists.",
+    highlights: [
+      'Ponte Viadotto — spectacular ancient aqueduct bridge over the ravine',
+      'Gravina Gorge — deep ravine with cave dwellings and cave churches carved into the cliffs',
+      'Cattedrale di Santa Maria Assunta — Gothic façade, atmospheric Baroque interior',
+      'Only 40 min from Matera — ideal combo stop on the same day',
+    ],
+    toddlerNote: 'Town centre and main viewpoints are accessible. Keep toddlers close at the ravine edge. The drama is all visual — short walks, big wow factor.',
+    toddlerRating: 2,
+    bestDay: 'Best combined with a Matera day trip — Gravina is only 40 min from Matera. Stop here for 1.5 hours on the way there or back.',
+    duration: '1.5–2 hours · Perfect as a Matera combo stop',
+    mustDo: 'Ponte Viadotto view over the gorge + cave church walk + Pane di Altamura from a bakery (Altamura is 15 min away)',
+    warn: '⚠️ Ravine viewpoints require care with small children. Some paths are uneven — keep the carrier handy.',
   },
   {
     emoji: '⚪',

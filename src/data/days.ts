@@ -6,7 +6,7 @@ export const days: Day[] = [
     date: 'Saturday, March 28 — Arrival Day',
     subtitle: 'Settle in, first gelato, evening seafront stroll',
     badges: [{ label: 'Arrival', type: 'arrival' }],
-    weather: { icon: '🌧️', temp: '12° / 9°C', desc: 'Rain showers (~5–8mm) — heavier than average', alert: 'rain' },
+    weather: { icon: '🌦️', temp: '12° / 9°C', desc: 'Light showers (~3.8mm), overcast — lighter than expected, pack a light umbrella', alert: 'rain' },
     nav: {
       todayPlace: '🛬 Arriving — Bari',
       tomorrowLabel: 'Tomorrow',
@@ -18,6 +18,13 @@ export const days: Day[] = [
         label: 'Arrival',
         title: "Pick up rental car — Bari Airport",
         desc: "Sicily by Car counter at Bari Karol Wojtyla Airport. Full Protection Insurance confirmed. Get the car seats sorted and load the luggage before hitting the road.",
+      },
+      {
+        dot: 'sight', emoji: '⛪',
+        label: 'Optional — If Arriving Before 1 PM',
+        title: 'Trani Detour — Cathedral on the Sea (~45 min north)',
+        desc: "If your flight lands before 1PM, don't drive straight to Bari — swing north to Trani first. It's 45 minutes from the airport and one of the most beautiful harbours in Puglia: a 12th-century Norman cathedral perched right on the Adriatic, a medieval castle at the water's edge, and a gorgeous old port full of fishing boats. Spend 2 hours exploring, then drive south ~45 min to Bari for the 3PM hotel check-in.",
+        tip: '📍 Park at Parcheggio Via Aldo Moro (free, central). Walk straight to the harbour front. Full details in the 🧭 Day Trips tab.',
       },
       {
         dot: 'special', emoji: '🚗',
@@ -71,7 +78,7 @@ export const days: Day[] = [
     date: 'Sunday, March 29 — Alberobello & Locorotondo',
     subtitle: "Trulli fairy-tale village + whitewashed hilltop town in Valle d'Itria",
     badges: [{ label: "🏠 Valle d'Itria", type: 'day-trip' }],
-    weather: { icon: '🌤️', temp: '15° / 9°C', desc: 'Morning clouds clearing — mostly dry, good day trip' },
+    weather: { icon: '🌦️', temp: '15° / 10°C', desc: 'Light sprinkles (~1mm) · breaks of sunshine in the afternoon — still a good day trip' },
     nav: {
       todayPlace: '🏠 Alberobello & Locorotondo',
       tomorrowLabel: 'Tomorrow',
@@ -133,6 +140,7 @@ export const days: Day[] = [
         label: 'Drive Home — ~1 hour',
         title: 'Locorotondo → Bari',
         desc: "Easy evening drive back. Perfect car nap for the little one on the way home!",
+        tip: '🌿 Energy left? Ostuni (the "White City") is 40 min from here — a stunning hilltop town worth 2 hours. Add it before heading back if the little one is still going strong. See 🧭 Day Trips.',
       },
       {
         dot: 'dinner', emoji: '🍷',
@@ -230,7 +238,7 @@ export const days: Day[] = [
     date: 'Tuesday, March 31 — Polignano a Mare & Monopoli',
     subtitle: 'Cliff coves & iconic Adriatic coast — two towns, one day (~30–36min drive)',
     badges: [{ label: '🌊 Polignano', type: 'day-trip' }, { label: '⚓ Monopoli', type: 'day-trip' }],
-    weather: { icon: '⛅', temp: '14° / 8°C', desc: 'Forecasts conflict — could be dry or heavy rain · check again the night before', alert: 'rain' },
+    weather: { icon: '🌧️', temp: '13° / 8°C', desc: 'Rain confirmed (~6.7mm) · decreasing cloudiness through the afternoon', alert: 'rain' },
     nav: {
       todayPlace: '🌊 Polignano + ⚓ Monopoli',
       tomorrowLabel: 'Tomorrow',
@@ -330,7 +338,7 @@ export const days: Day[] = [
     date: 'Wednesday, April 1 — Checkout & Last Bari Morning',
     subtitle: 'Basilica di San Nicola · Lungomare · orecchiette ladies · fly home',
     badges: [{ label: '🧳 Checkout', type: 'checkout' }],
-    weather: { icon: '🌧️', temp: '14° / 9°C', desc: 'Rainy day (~4–13mm) — easy checkout morning', alert: 'rain' },
+    weather: { icon: '🌤️', temp: '14° / 9°C', desc: 'Dry! 0mm forecast · mostly cloudy but strong winds (42 km/h) — much better than expected' },
     nav: {
       todayPlace: '🧳 Checkout — Bari',
       tomorrowLabel: 'Then',
