@@ -4,20 +4,22 @@ export const checklistGroups: ChecklistGroup[] = [
   {
     title: '📋 Before You Go',
     items: [
-      { text: 'Book La Cantina dello Zio (Bari)', sub: 'Only open Wed & Thu — call ahead, fills up fast. ⭐ 4.7 with 14,000+ reviews' },
+      { text: '⚠️ Book La Cantina dello Zio TONIGHT', sub: 'Open Wed & Fri only — departure is tomorrow, this is your last chance to book · +39 329 229 9403' },
       { text: 'Book Antò Ristorante (Bari) for a dinner', sub: 'Live music at weekends. Book 2–3 days ahead. ⭐ 4.6' },
-      { text: 'Confirm Zoosafari hours & buy tickets online', sub: 'zoosafari.it — family ticket ~€140. Saves time at entry. Opens 10AM' },
-      { text: 'Download offline maps for all towns', sub: 'Bari, Polignano, Alberobello, Fasano, Ostuni, Lecce, Matera — Google Maps or Maps.me' },
+      { text: 'Confirm Zoosafari hours & buy tickets online', sub: 'zoosafari.it — family ticket ~€140. Saves time at entry. Opens 10AM Mon' },
+      { text: 'Screenshot/print hotel confirmation + car rental docs', sub: "Il Leon D'Oro + Sicily by Car — have offline copies in case of no signal" },
+      { text: 'Download offline maps for all towns', sub: 'Bari, Polignano, Alberobello, Fasano — Google Maps or Maps.me · download before departure' },
       { text: 'Pack stroller + rain cover', sub: 'End of March can be rainy — Sassi di Matera requires a baby carrier instead' },
       { text: 'Pack beach shoes for Polignano', sub: 'Lama Monachile is rocky — good shoes essential' },
       { text: 'Pack a baby carrier for Matera', sub: 'Sassi streets are stone steps — not stroller-accessible' },
+      { text: 'Pack toddler car snacks + drinks', sub: 'Alberobello is ~1hr drive, Matera ~1.5hr — have snacks ready to avoid petrol station stops' },
       { text: 'Bring EHIC/health insurance card', sub: 'European Health Insurance Card covers public healthcare in Italy' },
     ],
   },
   {
     title: '🍽️ Restaurants to Book Ahead',
     items: [
-      { text: 'La Cantina dello Zio — Bari', sub: '⚠️ Wed & Thu only · Call to reserve · orecchiette + complimentary limoncello' },
+      { text: 'La Cantina dello Zio — Bari', sub: '⚠️ Wed & Fri only · Call to reserve · orecchiette + complimentary limoncello · +39 329 229 9403' },
       { text: 'Antò Ristorante — Bari', sub: 'Closed Wed · Live music weekends · Great ragù and truffle pasta' },
       { text: 'Le Nicchie — Bari', sub: 'Best spaghetti all\'assassina in Bari · Closed Mon · Book for dinner' },
       { text: 'Keiv Ristorante — Matera', sub: 'Reserve a terrace table for Sassi views · Lunch or dinner' },

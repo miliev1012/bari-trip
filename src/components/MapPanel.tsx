@@ -53,7 +53,8 @@ const ALL_MARKERS: MapMarker[] = [
   { id: 'anto',         lat: 41.1254, lng: 16.8700, emoji: '🍷', category: 'bari', name: "Antò Ristorante",                  note: 'Cucina tipica pugliese · Open every day · Family-friendly · Large portions' },
   { id: 'cantina',      lat: 41.1256, lng: 16.8698, emoji: '⭐', category: 'bari', name: 'La Cantina dello Zio',             note: 'Most celebrated restaurant in Bari · Open Wed & Fri only · BOOK AHEAD: +39 329 229 9403' },
   { id: 'via-sparano',  lat: 41.1230, lng: 16.8718, emoji: '🛍️', category: 'bari', name: 'Via Sparano',                     note: 'Bari\'s main shopping street · Souvenirs, ZARA, gelato · Evening stroll route' },
-  { id: 'bambini',      lat: 41.1162, lng: 16.8847, emoji: '🔬', category: 'bari', name: "Città dei Bambini e dei Ragazzi",  note: 'Interactive science museum for kids · Rainy day backup · Ages 6mo–10yr · Stroller-friendly' },
+  { id: 'spazio-murat', lat: 41.1272, lng: 16.8707, emoji: '🎨', category: 'bari', name: "Spazio Murat",                     note: 'Contemporary art & cultural space · Piazza del Ferrarese 1 · spaziomurat.it · Open daily 10AM–8PM · Free entry · Rainy day backup, right at Old Town entrance' },
+  { id: 'gomma-park',   lat: 41.1053, lng: 16.8740, emoji: '🎡', category: 'playground', name: "Gomma Park",                  note: 'Indoor amusement park for kids · Via della Costituente (near Parco 2 Giugno) · Rides & play areas designed for small children · Best full-rain-day option' },
 
   // ── Playgrounds ────────────────────────────────────────────────────────
   { id: 'parco-2giugno', lat: 41.1053, lng: 16.8763, emoji: '🛝', category: 'playground', name: "Parco 2 Giugno",         note: 'Bari\'s largest park · Full playground equipment · Open green space · Great for a run-around after lunch' },

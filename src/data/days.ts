@@ -10,7 +10,7 @@ export const days: Day[] = [
     nav: {
       todayPlace: '🛬 Arriving — Bari',
       tomorrowLabel: 'Tomorrow',
-      tomorrowPlace: '🦁 Zoosafari Fasano',
+      tomorrowPlace: '🏠 Alberobello & Locorotondo',
     },
     timeline: [
       {
@@ -268,6 +268,20 @@ export const days: Day[] = [
         label: 'After Lunch — Treat',
         title: 'Gelato with a Sea View — Polignano Old Town',
         desc: "Grab artisan gelato from one of the small shops in Polignano's old town, steps from the cliff edge. Eating a cone with the Adriatic below is absolutely magical. Try mandorla (almond) or fico (fig) — both local Puglian favourites!",
+      },
+      {
+        dot: 'walk', emoji: '🌉',
+        label: 'Afternoon Stroll',
+        title: 'Ponte Borbonico & Old Town Alleys',
+        desc: "Walk to the 18th-century Bourbon bridge spanning the Lama Monachile ravine — this is the elevated viewpoint that frames the cove perfectly and appears in every photo of Polignano. Then wander the whitewashed alleys of the pedestrian old town. Completely flat and stroller-friendly at street level.",
+        tip: '📸 The bridge is the iconic shot — stand on it looking down at the cove for the classic Polignano photo',
+      },
+      {
+        dot: 'sight', emoji: '🚤',
+        label: 'Optional — Sea Cave Boat Tour',
+        title: 'Grotte di Polignano — Boat Tour (~45 min)',
+        desc: "Short boat trips depart near Lama Monachile through glowing sea caves carved into the cliffs. Magical for kids — the coloured water inside the caves is extraordinary. ~€15–20/adult, young children often free or very cheap. Worth it if the sea is calm.",
+        tip: '🌊 Ask at the harbour kiosk near the cove — tours run on demand when there are enough passengers',
       },
       {
         dot: 'nap', emoji: '🚗',

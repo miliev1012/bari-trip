@@ -1,13 +1,15 @@
 type Tab = { id: string; label: string };
 
 const TABS: Tab[] = [
-  { id: 'itinerary', label: '📅 Itinerary' },
-  { id: 'places',    label: '📍 Places' },
-  { id: 'checklist', label: '✅ Checklist' },
-  { id: 'info',      label: 'ℹ️ Trip Info' },
-  { id: 'tips',      label: '🛟 Tips & Safety' },
-  { id: 'food',      label: '🍝 Food Guide' },
-  { id: 'map',       label: '🗺️ Map' },
+  { id: 'itinerary',  label: '📅 Itinerary' },
+  { id: 'places',     label: '📍 Places' },
+  { id: 'daytrips',   label: '🧭 Day Trips' },
+  { id: 'checklist',  label: '✅ Checklist' },
+  { id: 'info',       label: 'ℹ️ Trip Info' },
+  { id: 'tips',       label: '🛟 Tips & Safety' },
+  { id: 'food',       label: '🍝 Food Guide' },
+  { id: 'photos',     label: '📸 Photo Spots' },
+  { id: 'map',        label: '🗺️ Map' },
 ];
 
 interface Props {

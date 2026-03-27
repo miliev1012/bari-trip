@@ -15,7 +15,7 @@ export const infoCards: InfoCard[] = [
   },
   {
     icon: '🌤️', title: 'Weather Forecast — Day by Day',
-    html: "<strong>Sat 28 Mar</strong> 🌧️ 12°/8°C · Light rain (2.8mm) — pack umbrella<br><strong>Sun 29 Mar</strong> ☀️ 14°/9°C · Clear skies — perfect for trulli!<br><strong>Mon 30 Mar</strong> 🌤️ 13°/10°C · Dry — ideal safari weather<br><strong>Tue 31 Mar</strong> 🌤️ 14°/10°C · Mostly dry (0.5mm) — good for Polignano<br><strong>Wed 1 Apr</strong> 🌧️ 12°/9°C · Rain returns (6.3mm) — keep it covered<br><br>Sea is too cold for swimming but beautiful. March = shoulder season — fewer crowds, better prices!",
+    html: "<strong>Sat 28 Mar</strong> 🌧️ 12°/9°C · Rain showers (~5–8mm) — pack umbrella<br><strong>Sun 29 Mar</strong> 🌤️ 15°/9°C · Morning clouds clearing — mostly dry<br><strong>Mon 30 Mar</strong> 🌤️ 15°/8°C · Dry and mild — ideal safari weather<br><strong>Tue 31 Mar</strong> ⛅ 14°/8°C · Forecasts conflict — could be dry or heavy rain · check night before<br><strong>Wed 1 Apr</strong> 🌧️ 14°/9°C · Rainy day (~4–13mm) — easy checkout morning<br><br>Sea is too cold for swimming but beautiful. March = shoulder season — fewer crowds, better prices!",
   },
 ];
 
@@ -43,6 +43,11 @@ export const infoTips: TipBox[] = [
 ];
 
 export const budgetCards: BudgetCard[] = [
+  { label: '📅 Day 1 — Arrival & Bari', amount: '~€80–120', note: 'Coffee + gelato + dinner for 2 + drinks · mostly walking day' },
+  { label: '📅 Day 2 — Alberobello & Locorotondo', amount: '~€100–150', note: 'Fuel + parking + focaccia lunch + dinner back in Bari' },
+  { label: '📅 Day 3 — Zoosafari + Monopoli', amount: '~€200–260', note: '~€140 zoo tickets + fuel + food + optional Monopoli lunch' },
+  { label: '📅 Day 4 — Polignano a Mare', amount: '~€80–130', note: 'Parking + Pescaria + gelato + optional boat tour + dinner' },
+  { label: '📅 Day 5 — Checkout & La Cantina', amount: '~€70–100', note: 'La Cantina farewell lunch ~€50–60 for two · coffee + return car' },
   { label: 'Espresso / Cappuccino', amount: '€1–2', note: 'Standing at the bar · sitting adds €1–2' },
   { label: 'Street food snack', amount: '€1–4', note: 'Panzerotto, rustico leccese, pasticciotto' },
   { label: 'Lunch (per person)', amount: '€12–25', note: 'Mastro Ciccio ~€12–15 · Sit-down €20–25' },
@@ -84,14 +89,14 @@ export const phrases: PhraseCard[] = [
 ];
 
 export const rainCards: RainCard[] = [
-  { title: '🌧️ Day 1 (Sat) — Rainy Arrival', desc: "Light rain forecast for arrival day (2.8mm). The covered alleyways of Bari Vecchia are charming even in the wet — duck into the Basilica di San Nicola (free, stunning crypt) or the Cathedral. Galleria Murat (covered 19th-century arcade, stroller-friendly) is a great dry stroll near the hotel.", note: '✅ Mostly manageable — lots of indoor options' },
-  { title: '☀️ Day 2 (Sun) — Clear for Alberobello!', desc: "Forecast is sunny and dry — the best possible day for the trulli village. Go early (depart 8:30AM) to beat day-tripper buses. Take the Belvedere panorama shot before 10AM.", note: '✅ Perfect conditions — no rain expected' },
-  { title: '🌤️ Day 3 (Mon) — Dry for Zoosafari', desc: "Dry and mild. Even if light drizzle appears, the drive-through safari is entirely from the car. Pack a light waterproof for the walking areas just in case.", note: '✅ Safari barely affected by rain anyway' },
-  { title: '🌤️ Day 4 (Tue) — Good for Polignano', desc: "Mostly dry with only 0.5mm forecast — ideal for Lama Monachile cliff cove. The cliff views are dramatic even in moody weather. If considering adding Grotte di Castellana: the caves are 15°C year-round regardless of surface weather.", note: '✅ Good coastal conditions' },
-  { title: '🌧️ Day 5 (Wed) — Rainy Departure Morning', desc: "Rainiest day of the trip (6.3mm). Checkout is 11AM — good timing to stay sheltered. La Cantina dello Zio opens at 11:30AM on Wednesdays for a warm farewell lunch inside. Lungomare walk may be wet but a quick Orecchiette Alley visit under the arches is still doable.", note: '☂️ Pack umbrella for the morning — La Cantina is the perfect shelter!' },
-  { title: '🏛️ Indoor Alternative: Città dei Bambini', desc: "Interactive science museum for kids 6 months–10 years. Hands-on exhibits covering physics, biology, technology. Excellent fallback for a heavy rain afternoon.", note: '📍 Bari city centre — check opening hours' },
-  { title: '🏛️ Indoor Alternative: Galleria Murat', desc: "Bari's beautiful covered 19th-century arcade. Perfect for a dry stroll with a stroller, cafés inside, often hosts free exhibitions.", note: '📍 Near the Teatro Petruzzelli' },
-  { title: '🏛️ Indoor Alternative: Museo Nazionale', desc: 'The Museo Nazionale Archeologico di Bari has fascinating Greek and Roman artefacts from Puglia. Toddler-friendly — big open halls and lots to look at.', note: '📍 Bari city centre' },
+  { title: '🌧️ Day 1 (Sat) — Rainy Arrival', desc: "Rain showers forecast for arrival day (~5–8mm) — heavier than a typical late-March drizzle. The covered alleyways of Bari Vecchia are charming even in the wet — duck into the Basilica di San Nicola (free, stunning crypt) or the Cathedral of Saint Sabinus. Head to Spazio Murat (Piazza del Ferrarese 1, free cultural space, open 10AM) if it really picks up.", note: '✅ Manageable — old town alleyways provide shelter' },
+  { title: '🌤️ Day 2 (Sun) — Morning Clouds, Then Clearing', desc: "Morning clouds burn off during the drive to Alberobello — expect a mostly dry day by the time you arrive. Still depart early (8:30AM) to catch the best light on the trulli. The Belvedere panorama looks atmospheric even with a few clouds overhead.", note: '✅ Good conditions — go early as planned' },
+  { title: '🌤️ Day 3 (Mon) — Dry for Zoosafari', desc: "Dry and mild all day. Even if light drizzle appears, the drive-through safari is entirely from the car. Pack a light waterproof for the on-foot walking areas of the park, but conditions look ideal.", note: '✅ Safari barely affected by rain anyway' },
+  { title: '⛅ Day 4 (Tue) — Polignano: Check Night Before!', desc: "Forecasts are conflicting for this day — one model shows 0mm and broken clouds, another shows 16mm and heavy rain. Check the forecast on Monday evening before you go to sleep. If it looks very wet: the Grotte di Castellana (20 min from Polignano) are a perfect rain-proof alternative — underground caves at a constant 15°C. Polignano old town is also lovely in the rain if it's light.", note: '⚠️ Uncertain — verify forecast on Monday night' },
+  { title: '🌧️ Day 5 (Wed) — Rainy Departure Morning', desc: "Both forecast models agree on rain (~4–13mm). Checkout is 11AM — good timing to stay sheltered inside. La Cantina dello Zio opens at 11:30AM on Wednesdays — the perfect warm farewell lunch. The Orecchiette Alley visit under the old town arches is still doable even in the wet.", note: '☂️ La Cantina dello Zio is the perfect rain shelter for your last meal!' },
+  { title: '🏛️ Indoor: Spazio Murat', desc: "Contemporary art and cultural space right at the entrance of Bari Vecchia — free entry, fully stroller-friendly, opens at 10AM daily. Exhibitions, design shows, and children's workshops. A genuine cultural space, not just a rain shelter.", note: '📍 Piazza del Ferrarese 1 · Free · Daily 10AM–8PM' },
+  { title: '🎡 Indoor: Gomma Park', desc: "Bari's best fully-covered kids' amusement park — mini coaster, bumper cars, soft play zones, all designed for small children. The go-to option if it's genuinely pouring and you need a couple of hours of contained toddler happiness.", note: '📍 Via della Costituente, near Parco 2 Giugno' },
+  { title: '🏛️ Indoor: Museo Nazionale Archeologico', desc: 'Fascinating Greek and Roman artefacts from Puglia across spacious halls. Toddler-friendly — wide open rooms, nothing at dangerous heights. Excellent fallback for a heavy rain afternoon in Bari.', note: '📍 Bari city centre · Check current hours' },
 ];
 
 export const emergencyCards: EmergencyCard[] = [

@@ -8,9 +8,11 @@ import InfoPanel from './components/InfoPanel';
 import TipsPanel from './components/TipsPanel';
 import GlossaryPanel from './components/GlossaryPanel';
 import MapPanel from './components/MapPanel';
+import PhotoPanel from './components/PhotoPanel';
+import DayTripsPanel from './components/DayTripsPanel';
 import { days } from './data/days';
 
-type PanelId = 'itinerary' | 'places' | 'checklist' | 'info' | 'tips' | 'food' | 'map';
+type PanelId = 'itinerary' | 'places' | 'checklist' | 'info' | 'tips' | 'food' | 'map' | 'photos' | 'daytrips';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<PanelId>('itinerary');
@@ -64,6 +66,18 @@ export default function App() {
         {activeTab === 'map' && (
           <div className="panel active">
             <MapPanel />
+          </div>
+        )}
+
+        {activeTab === 'photos' && (
+          <div className="panel active">
+            <PhotoPanel />
+          </div>
+        )}
+
+        {activeTab === 'daytrips' && (
+          <div className="panel active">
+            <DayTripsPanel />
           </div>
         )}
       </div>
