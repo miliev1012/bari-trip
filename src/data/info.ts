@@ -3,7 +3,7 @@ import type { InfoCard, TipBox, BudgetCard, HubRoute, PhraseCard, RainCard, Emer
 export const infoCards: InfoCard[] = [
   {
     icon: '🏨', title: 'Hotel',
-    html: "<strong>Il Leon D'Oro Bari</strong><br>by Farace Hotels<br><br>Check-in: <strong>Sat 28 Mar 2026</strong> (after 3PM)<br>Check-out: <strong>Wed 1 Apr 2026</strong><br><br>🅿️ Hotel parking: <strong>€30/day</strong> · secured garage · book ahead (limited spaces)",
+    html: "<strong>Il Leon D'Oro Bari</strong><br>by Farace Hotels<br><br>Check-in: <strong>Sat 28 Mar 2026</strong> (after 3PM)<br>Check-out: <strong>Wed 1 Apr 2026</strong><br><br>🅿️ Hotel parking: listed as <strong>free</strong> on Google Maps · confirm with hotel when booking",
   },
   {
     icon: '🚗', title: 'Car Rental',
@@ -15,7 +15,7 @@ export const infoCards: InfoCard[] = [
   },
   {
     icon: '🅿️', title: 'Parking — Town by Town',
-    html: "<strong>🏨 Hotel (Bari)</strong> — Secured garage <strong>€30/day</strong> · book ahead (limited). Street: blue lines around Piazza Aldo Moro ~€1.50/hr.<br><br><strong>🏠 Alberobello</strong> — Parcheggio Viale Indipendenza · <strong>€6 all-day</strong> · 3 min walk · enter your plate at the machine · arrive before 9:30AM or it fills up.<br><br><strong>⚪ Locorotondo</strong> — Underground garage at Piazza Aldo Moro entrance (town walls). ⚠️ <strong>ZTL zone</strong> — camera-enforced, fines ~€80–150 if you drive into the centro storico.<br><br><strong>🌊 Polignano a Mare</strong> — Piazzale Marco Polo · free or low cost · 5–10 min walk to old town. Blue lines = paid; <strong>yellow lines = residents only (automatic fine)</strong>.<br><br><strong>⚓ Monopoli</strong> — Via Antonelli or Via Arenazza · free · 10 min walk. ⚠️ <strong>ZTL zone</strong> — cameras in the old town entrance. Park outside and walk in.<br><br><strong>⛪ Trani</strong> (optional) — Piazza Castello paid (by cathedral) · or free bus parking near Via Alvarez (10 min walk).<br><br>⚠️ <strong>ZTL fines</strong> go to the rental company, who charge your card — sometimes weeks after you're home.",
+    html: "<strong>🏨 Hotel (Bari)</strong> — Parking listed as <strong>free</strong> on Google Maps · confirm with hotel at check-in. Street: blue lines around Piazza Aldo Moro ~€1.50/hr.<br><br><strong>🏠 Alberobello</strong> — Parcheggio Viale Indipendenza · <strong>€6 all-day</strong> · 3 min walk · enter your plate at the machine · arrive before 9:30AM or it fills up.<br><br><strong>⚪ Locorotondo</strong> — Underground garage at Piazza Aldo Moro entrance (town walls). ⚠️ <strong>ZTL zone</strong> — camera-enforced, fines ~€80–150 if you drive into the centro storico.<br><br><strong>🌊 Polignano a Mare</strong> — Piazzale Marco Polo · free or low cost · 5–10 min walk to old town. Blue lines = paid; <strong>yellow lines = residents only (automatic fine)</strong>.<br><br><strong>⚓ Monopoli</strong> — Via Antonelli or Via Arenazza · free · 10 min walk. ⚠️ <strong>ZTL zone</strong> — cameras in the old town entrance. Park outside and walk in.<br><br><strong>⛪ Trani</strong> (optional) — Piazza Castello paid (by cathedral) · or free bus parking near Via Alvarez (10 min walk).<br><br>⚠️ <strong>ZTL fines</strong> go to the rental company, who charge your card — sometimes weeks after you're home.",
   },
   {
     icon: '🌤️', title: 'Weather Forecast — Day by Day',

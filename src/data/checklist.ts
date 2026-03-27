@@ -8,7 +8,7 @@ export const checklistGroups: ChecklistGroup[] = [
       { text: 'Book Antò Ristorante (Bari) for a dinner', sub: 'Live music at weekends. Book 2–3 days ahead. ⭐ 4.6' },
       { text: 'Confirm Zoosafari hours & buy tickets online', sub: 'zoosafari.it — family ticket ~€140. Saves time at entry. Opens 10AM Mon' },
       { text: 'Screenshot/print hotel confirmation + car rental docs', sub: "Il Leon D'Oro + Sicily by Car — have offline copies in case of no signal" },
-      { text: '🅿️ Book hotel parking garage in advance', sub: "Il Leon D'Oro garage is €30/day, limited spaces — call or email to reserve. Note your rental car plate number at Sicily by Car pickup." },
+      { text: '🅿️ Confirm hotel parking at check-in', sub: "Il Leon D'Oro is listed as free parking on Google Maps — verify on arrival. Also note your rental car plate number at Sicily by Car pickup (needed at paid parking machines)." },
       { text: 'Download offline maps for all towns', sub: 'Bari, Polignano, Alberobello, Fasano — Google Maps or Maps.me · download before departure' },
       { text: 'Pack stroller + rain cover', sub: 'End of March can be rainy — Sassi di Matera requires a baby carrier instead' },
       { text: 'Pack beach shoes for Polignano', sub: 'Lama Monachile is rocky — good shoes essential' },

@@ -31,7 +31,7 @@ export const days: Day[] = [
         label: 'Drive — ~20 minutes',
         title: "Airport → Hotel Il Leon D'Oro",
         desc: "Drop luggage at the hotel reception — rooms available after 3PM but they'll store bags for you. Quick freshen up, then straight out to explore.",
-        tip: '🅿️ Hotel garage costs €30/day — call ahead to confirm a space (limited). Note your rental car plate at pickup. If hotel is full: blue-line street parking around Piazza Aldo Moro (~€1.50/hr).',
+        tip: '🅿️ Hotel parking is listed as free on Google Maps — confirm at check-in. Note your rental car plate number at pickup (needed for parking machines throughout the trip).',
       },
       {
         dot: 'snack', emoji: '☕',
