@@ -7,6 +7,7 @@ const FILTERS = [
   { id: 'cheese',  label: '🧀 Cheese & Antipasti' },
   { id: 'seafood', label: '🐟 Seafood' },
   { id: 'meat',    label: '🥩 Meat' },
+  { id: 'veg',     label: '🫒 Vegetables & Oils' },
   { id: 'sweet',   label: '🍯 Sweets' },
   { id: 'drink',   label: '🍷 Drinks' },
 ];
